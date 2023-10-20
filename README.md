@@ -15,4 +15,4 @@ Game for MinnHax 2023.
   - Two characters
   - Spotlight under currently active
   - One follows the other
-  - They can be seperate 
+  - They can be seperate
