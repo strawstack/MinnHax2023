@@ -11,4 +11,8 @@ Game for MinnHax 2023.
   - Text box dialogue.
   - Characters walking.
   - Presentation of achievements in bottom right.
-- [ ] 
+- [ ] Design character control.
+  - Two characters
+  - Spotlight under currently active
+  - One follows the other
+  - They can be seperate 
