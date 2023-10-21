@@ -1,0 +1,14 @@
+{
+	"data": [
+		{
+			"type": "achievement",
+			"name": "The bombs haven’t touched here.",
+			"value": "[clip name]"
+		},
+		{
+			"type": "text",
+			"name": "leo",
+			"value": "The bombs haven’t touched here. We made it!"
+		}
+	]
+}

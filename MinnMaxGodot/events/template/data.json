@@ -1,0 +1,28 @@
+{
+	"data": [
+		{
+			"type": "text",
+			"name": "ben",
+			"value": "message"
+		},
+		{
+			"type": "function",
+			"name": "camera",
+			"value": {
+				"from": "point_name",
+				"to": "point_name",
+				"speed": 1000
+			}
+		},
+		{
+			"type": "move",
+			"name": "ben",
+			"value": ["point_name"]
+		},
+		{
+			"type": "achievement",
+			"name": "ach_name",
+			"value": "[clip name]"
+		}
+	]
+}

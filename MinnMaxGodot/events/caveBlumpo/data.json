@@ -1,0 +1,34 @@
+{
+	"data": [
+		{
+			"type": "text",
+			"name": "leo",
+			"value": "Wait! Hansen, there’s something else in here."
+		},
+		{
+			"type": "text",
+			"name": "ben",
+			"value": "What is it?"
+		},
+		{
+			"type": "text",
+			"name": "leo",
+			"value": "It’s... it’s... transparent."
+		},
+		{
+			"type": "text",
+			"name": "ben",
+			"value": "Use your bio sensor."
+		},
+		{
+			"type": "achievement",
+			"name": "ach_name",
+			"value": "[clip name]"
+		},
+		{
+			"type": "text",
+			"name": "leo",
+			"value": "It’s Blumpo."
+		}
+	]
+}

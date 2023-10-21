@@ -1,0 +1,39 @@
+{
+	"data": [
+		{
+			"type": "text",
+			"name": "ben",
+			"value": "I think that's a new show plus everybody. Thank you for voting for this.Thank you for the subs greatly appreciate it, but, hey, hats-off Janet. Thank you for being a great host!"
+		},
+		{
+			"type": "achievement",
+			"name": "See ya later!",
+			"value": "[clip name]"
+		},
+		{
+			"type": "text",
+			"name": "janet",
+			"value": "Thanks. All right. See ya later!"
+		},
+		{
+			"type": "text",
+			"name": "ben",
+			"value": "Mehaaaaay!"
+		},
+		{
+			"type": "function",
+			"name": "fade",
+			"value": 1000
+		},
+		{
+			"type": "achievement",
+			"name": "Rob the DQ.",
+			"value": "[clip name]"
+		},
+		{
+			"type": "function",
+			"name": "start",
+			"value": 4000
+		}
+	]
+}

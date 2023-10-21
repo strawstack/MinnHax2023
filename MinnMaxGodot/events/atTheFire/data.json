@@ -1,0 +1,51 @@
+{
+	"data": [
+		{
+			"type": "function",
+			"name": "fire",
+			"value": {
+				"from": "point_name",
+				"to": "point_name",
+				"speed": 1000
+			}
+		},
+		{
+			"type": "function",
+			"name": "camera",
+			"value": {
+				"from": "point_name",
+				"to": "point_name",
+				"speed": 1000
+			}
+		},
+		{
+			"type": "text",
+			"name": "janet",
+			"value": "Chat is like 'those people are rich!'"
+		},
+		{
+			"type": "function",
+			"name": "camera",
+			"value": {
+				"from": "point_name",
+				"to": "point_name",
+				"speed": 1000
+			}
+		},
+		{
+			"type": "text",
+			"name": "ben",
+			"value": "Do you think they’re happy Janet. Do you think by and large those people with those houses are happy?"
+		},
+		{
+			"type": "achievement",
+			"name": "Rich as Hell.",
+			"value": "[clip name]"
+		},
+		{
+			"type": "text",
+			"name": "janet",
+			"value": "Oh, hell yeah cause they're rich as hell; they're, yeah, they're ridiculously rich."
+		}
+	]
+}

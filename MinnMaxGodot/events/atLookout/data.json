@@ -1,0 +1,68 @@
+{
+	"data": [
+		{
+			"type": "text",
+			"name": "ben",
+			"value": "message"
+		},
+		{
+			"type": "text",
+			"name": "leo",
+			"value": "message"
+		},
+		{
+			"type": "text",
+			"name": "janet",
+			"value": "message"
+		},
+		{
+			"type": "text",
+			"name": "leo",
+			"value": "message"
+		},
+		{
+			"type": "text",
+			"name": "janet",
+			"value": "message"
+		},
+		{
+			"type": "text",
+			"name": "ben",
+			"value": "message"
+		},
+		{
+			"type": "text",
+			"name": "janet",
+			"value": "message"
+		},
+		{
+			"type": "text",
+			"name": "ben",
+			"value": "message"
+		},
+		{
+			"type": "function",
+			"name": "camera",
+			"value": {
+				"to": "point_name"
+			}
+		},		
+		{
+			"type": "function",
+			"name": "zoom",
+			"value": {
+				"to": 2
+			}
+		},
+		{
+			"type": "achievement",
+			"name": "Well.. we tried.",
+			"value": "[clip name]"
+		},
+		{
+			"type": "text",
+			"name": "ben",
+			"value": "Well… we tried. It’s probably the coolest thing you could possibly imagine."
+		}
+	]
+}

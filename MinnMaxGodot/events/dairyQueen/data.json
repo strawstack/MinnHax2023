@@ -1,0 +1,29 @@
+{
+	"data": [
+		{
+			"type": "text",
+			"name": "ben",
+			"value": "How'd you like to handle this Leo?"
+		},
+		{
+			"type": "text",
+			"name": "leo",
+			"value": "Do you want to order since you're buying?"
+		},
+		{
+			"type": "text",
+			"name": "ben",
+			"value": "Sure, and you want big water, and…?"
+		},
+		{
+			"type": "achievement",
+			"name": "Cotton Candy Blizzard!",
+			"value": "[clip name]"
+		},
+		{
+			"type": "text",
+			"name": "leo",
+			"value": "Big water, small Cotton Candy Blizzard!"
+		}
+	]
+}
