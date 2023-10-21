@@ -1,15 +1,21 @@
 extends Node2D
 
 var gc
+var tagsNode
 @export var charName: String = ""
 
 func _ready():
 	gc = get_tree().root.get_node("main")
 	var curCell = currentCell()
+	tagsNode = gc.getTagsNode()
 	gc.setState(func(s): s[charName]["cell"] = curCell)
 	gc.reportReady(charName)
 	
 func movingFalse():
+	var state = gc.getState()
+	var currentCell = currentCell()
+	if state["active_char"] == charName:
+		tagsNode.triggerEvent(currentCell)
 	gc.setState(func(s): s[charName]["moving"] = false)
 
 func move(targetCell):

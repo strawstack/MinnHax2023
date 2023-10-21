@@ -1,0 +1,18 @@
+{
+	"data": [
+		{
+			"type": "text",
+			"name": "ben",
+			"value": "Let us know if the chat wants to see anything. We can show them our walking shoes, leg muscles, really whatever they want…"
+		},
+		{"leo": "I was expecting you to make fun of mine way sooner."},
+		{"ben": "Your walking shoes? Yeah, what’s going on here."},
+		{
+			"type": "achievement",
+			"value": "crocking it and rocking it",
+			"audio": "[audio event here]"
+		},
+		{"leo": "I’m crocking it and rocking it."},
+		{"janet": "Nice."}
+	]
+}

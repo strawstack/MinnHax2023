@@ -1,5 +1,9 @@
 extends Node
 
+@export var leoNode: Node
+@export var benNode: Node
+@export var tagsNode: Node
+
 var readyLookup = {
 	"leo": false,
 	"ben": false
@@ -7,6 +11,7 @@ var readyLookup = {
 
 var state = {
 	"ready": false,
+	"eventInProgress": false,
 	"active_char": "ben",
 	"leo": {
 		"cell": Vector2(0, 0),
@@ -33,6 +38,12 @@ func cellToWorld(cellVec):
 
 func worldToCell(worldVec):
 	return Vector2(floor(worldVec.x / 32.0), floor(worldVec.y / 32.0))
+
+func hashCell(cell):
+	return str(cell.x) + ":" + str(cell.y)
+
+func getTagsNode():
+	return tagsNode
 
 func getState():
 	return state
