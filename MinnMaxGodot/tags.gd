@@ -2,9 +2,15 @@ extends Node2D
 
 var gc
 var tagLookup = {}
+var canvasLayerNode
+
+# Loaded by startEvent
+var index
+var steps
 
 func _ready():
 	gc = get_tree().root.get_node("main")
+	canvasLayerNode = gc.getCanvasLayer()
 	for child in get_children():
 		var hashCell = gc.hashCell(gc.worldToCell(child.get_global_position()))
 		tagLookup[hashCell] = child.name
@@ -12,6 +18,7 @@ func _ready():
 func triggerEvent(cell):
 	var hashCell = gc.hashCell(cell)
 	if hashCell in tagLookup:
+		gc.setState(func(s): s["event"] = true)
 		var eventName = tagLookup[hashCell]
 		var pathName = "res://events/" + eventName + "/data.json"
 		var jsonString = readFile(pathName)
@@ -32,8 +39,31 @@ func parseJSON(jsonString):
 		print("JSON Parse Error: ", json.get_error_message(), " in ", jsonString, " at line ", json.get_error_line())
 
 func startEvent(data):
-	for step in data:
-		print(step)
+	index = 0
+	steps = data 
+	nextStep()
 
-func _process(delta):
+func nextStep():
+	if index >= steps.size():
+		# Event complete!
+		gc.setState(func(s): s["event"] = false)
+	else:
+		var step = steps[index]
+		index += 1
+		if step["type"] == "text":
+			handleText(step["name"], step["value"])
+		elif step["type"] == "achievement":
+			handleAchievement(step["name"], step["value"])
+
+func handleText(charName, value):
+	canvasLayerNode.showText(charName, value, stepComplete)
+
+func handleAchievement(achName, value):
+	canvasLayerNode.showAchievement(achName, value)
+	stepComplete()
+
+func stepComplete():
+	nextStep()
+
+func _process(_delta):
 	pass

@@ -5,14 +5,30 @@
 			"name": "ben",
 			"value": "Let us know if the chat wants to see anything. We can show them our walking shoes, leg muscles, really whatever they want…"
 		},
-		{"leo": "I was expecting you to make fun of mine way sooner."},
-		{"ben": "Your walking shoes? Yeah, what’s going on here."},
+		{
+			"type": "text",
+			"name": "leo",
+			"value": "I was expecting you to make fun of mine way sooner."
+		},
+		{
+			"type": "text",
+			"name": "ben",
+			"value": "Your walking shoes? Yeah, what’s going on here."
+		},
 		{
 			"type": "achievement",
-			"value": "crocking it and rocking it",
-			"audio": "[audio event here]"
+			"name": "crocking it and rocking it",
+			"value": "[clip name]"
 		},
-		{"leo": "I’m crocking it and rocking it."},
-		{"janet": "Nice."}
+		{
+			"type": "text",
+			"name": "leo",
+			"value": "I’m crocking it and rocking it."
+		},
+		{
+			"type": "text",
+			"name": "janet",
+			"value": "Nice."
+		}
 	]
 }

@@ -13,9 +13,9 @@ func _ready():
 	
 func movingFalse():
 	var state = gc.getState()
-	var currentCell = currentCell()
+	var curCell = currentCell()
 	if state["active_char"] == charName:
-		tagsNode.triggerEvent(currentCell)
+		tagsNode.triggerEvent(curCell)
 	gc.setState(func(s): s[charName]["moving"] = false)
 
 func move(targetCell):
@@ -43,13 +43,13 @@ func otherCharName():
 func otherCharNode():
 	return get_tree().root.get_node("main" + "/" + otherCharName())
 
-func _process(delta):
+func _process(_delta):
 	
 	var state = gc.getState()
 	var charState = state[charName]
 	
 	if state["ready"]:
-		if not charState["moving"]:
+		if (not charState["moving"]) and (not state["event"]):
 			if state["active_char"] == charName and not state[otherCharName()]["moving"]:
 				if Input.is_action_pressed("up"):
 					gc.setState(func(s): s[charName]["cell"] = charState["cell"] + Vector2(0, -1))

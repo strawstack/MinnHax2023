@@ -3,6 +3,7 @@ extends Node
 @export var leoNode: Node
 @export var benNode: Node
 @export var tagsNode: Node
+@export var canvasLayerNode: Node
 
 var readyLookup = {
 	"leo": false,
@@ -11,7 +12,7 @@ var readyLookup = {
 
 var state = {
 	"ready": false,
-	"eventInProgress": false,
+	"event": false, # eventInProgress
 	"active_char": "ben",
 	"leo": {
 		"cell": Vector2(0, 0),
@@ -45,11 +46,14 @@ func hashCell(cell):
 func getTagsNode():
 	return tagsNode
 
+func getCanvasLayer():
+	return canvasLayerNode
+
 func getState():
 	return state
 	
 func setState(userFunction):
 	userFunction.call(getState())
 
-func _process(delta):
+func _process(_delta):
 	pass
