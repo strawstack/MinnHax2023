@@ -42,10 +42,15 @@
 		},
 		{
 			"type": "function",
+			"name": "camera_track",
+			"value": false
+		},		
+		{
+			"type": "function",
 			"name": "camera",
 			"value": {
-				"to": "point_name",
-				"speed": 1000
+				"to": "monster_drain",
+				"speed": 1
 			}
 		},		
 		{
@@ -53,24 +58,35 @@
 			"name": "zoom",
 			"value": {
 				"to": 2,
-				"speed": 1000
+				"speed": 1
 			}
+		},
+		{
+			"type": "function",
+			"name": "pause",
+			"value": 1
 		},
 		{
 			"type": "function",
 			"name": "zoom",
 			"value": {
 				"to": 1,
-				"speed": 1000
+				"speed": 1
 			}
 		},		
 		{
 			"type": "function",
 			"name": "camera",
 			"value": {
-				"to": "character"
+				"to": "character",
+				"speed": 1
 			}
 		},
+		{
+			"type": "function",
+			"name": "camera_track",
+			"value": true
+		},		
 		{
 			"type": "achievement",
 			"name": "Well.. we tried.",

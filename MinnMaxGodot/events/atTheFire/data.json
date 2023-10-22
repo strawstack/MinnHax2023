@@ -2,8 +2,7 @@
 	"data": [
 		{
 			"type": "function",
-			"name": "cutscene",
-			"value": "fire"
+			"name": "startFire"
 		},
 		{
 			"type": "function",
@@ -28,10 +27,15 @@
 		},			
 		{
 			"type": "function",
+			"name": "pause",
+			"value": 3
+		},
+		{
+			"type": "function",
 			"name": "camera",
 			"value": {
 				"to": "house_over_water",
-				"speed": 1000
+				"speed": 3
 			}
 		},
 		{
@@ -43,8 +47,8 @@
 			"type": "function",
 			"name": "camera",
 			"value": {
-				"to": "character",
-				"speed": 1000
+				"to": "ben",
+				"speed": 3
 			}
 		},
 		{
@@ -64,9 +68,12 @@
 		},
 		{
 			"type": "function",
-			"name": "cutscene",
-			"value": "fire_ends"
+			"name": "fireOff"
 		},
+		{
+			"type": "function",
+			"name": "raiseLight"
+		},		
 		{
 			"type": "function",
 			"name": "move",
@@ -88,6 +95,14 @@
 			"name": "seperate",
 			"value": false
 		},
+		{
+			"type": "function",
+			"name": "camera",
+			"value": {
+				"to": "leo",
+				"speed": 0.5
+			}
+		},		
 		{
 			"type": "function",
 			"name": "switch",

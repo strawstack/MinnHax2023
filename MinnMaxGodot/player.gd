@@ -28,7 +28,8 @@ func move(targetCell):
 	tween.tween_callback(movingFalse)
 	
 	# Announce movement
-	if gc.getState()["active_char"] == charName:
+	var state = gc.getState()
+	if not state["seperate"] and state["active_char"] == charName:
 		otherCharNode().listenForMovement(curCell)
 
 func listenForMovement(targetCell):

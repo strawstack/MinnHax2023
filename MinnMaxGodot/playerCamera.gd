@@ -14,9 +14,11 @@ func _ready():
 	leoNode = gc.getLeoNode()
 	benNode = gc.getBenNode()
 
+func cameraTrack(value):
+	trackPlayer = value 
+
 func rotateCamera(value):
 	if value:
-		trackPlayer = false
 		set_ignore_rotation(false)
 		shouldRotate = true
 		var pos = get_global_position()
@@ -26,10 +28,27 @@ func rotateCamera(value):
 		tween.set_loops()
 	else:
 		tween.stop()
-		trackPlayer = true
 		shouldRotate = false
 		set_rotation(0)
 		set_ignore_rotation(true)
+
+func moveCameraComplete(pos, callback):
+	set_global_position(pos)
+	callback.call()
+
+func moveCamera(pos, speed, callback):
+	var tween = create_tween()
+	tween.tween_property(self, "position", pos, speed)
+	tween.tween_callback(func(): moveCameraComplete(pos, callback))
+
+func zoomCameraComplete(value, callback):
+	set_zoom(Vector2(1, 1) * value)
+	callback.call()
+
+func zoomCamera(value, speed, callback):
+	var tween = create_tween()
+	tween.tween_property(self, "zoom", Vector2(1, 1) * value, speed)
+	tween.tween_callback(func(): zoomCameraComplete(value, callback))
 
 func _process(delta):
 	var state = gc.getState()

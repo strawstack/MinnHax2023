@@ -32,6 +32,11 @@
 		},
 		{
 			"type": "function",
+			"name": "camera_track",
+			"value": false
+		},		
+		{
+			"type": "function",
 			"name": "camera_rotate",
 			"value": true
 		},
@@ -59,6 +64,11 @@
 			"type": "function",
 			"name": "camera_rotate",
 			"value": false
-		}		
+		},
+		{
+			"type": "function",
+			"name": "camera_track",
+			"value": true
+		}
 	]
 }

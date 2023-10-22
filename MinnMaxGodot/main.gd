@@ -5,7 +5,7 @@ extends Node
 @export var tagsNode: Node2D
 @export var canvasLayerNode: CanvasLayer
 @export var canvasModulate: CanvasModulate
-@export var eventArtNode: Node2D
+@export var eventAssetsNode: Node2D
 
 var readyLookup = {
 	"leo": false,
@@ -17,6 +17,7 @@ var state = {
 	"ready": false,
 	"event": false, # eventInProgress
 	"active_char": "ben",
+	"seperate": false,
 	"leo": {
 		"cell": Vector2(0, 0),
 		"moving": false,
@@ -26,6 +27,8 @@ var state = {
 		"moving": false,
 	}
 }
+
+var pauseTimerCallback # set by pause function from json
 
 func fadeInComplete():
 	setState(func(s): s["event"] = true)
@@ -48,7 +51,7 @@ func reportReady(key):
 	setState(func(s): s["ready"] = true)
 
 func cellToWorld(cellVec):
-	return cellVec * Vector2(32.0, 32.0)
+	return cellVec * 32.0
 
 func worldToCell(worldVec):
 	return Vector2(floor(worldVec.x / 32.0), floor(worldVec.y / 32.0))
@@ -63,7 +66,7 @@ func getCanvasLayer():
 	return canvasLayerNode
 
 func getEventArtNode():
-	return eventArtNode
+	return eventAssetsNode
 
 func getState():
 	return state
@@ -83,5 +86,52 @@ func playAudio(audioClip):
 func cameraRotate(value):
 	$Camera2D.rotateCamera(value)
 
+func moveCamera(to, speed, callback):
+	var pos
+	if to == "ben":
+		pos = benNode.get_global_position()
+	elif to == "leo":
+		pos = leoNode.get_global_position()
+	else:
+		pos = $eventAssets.get_node(to).get_global_position()
+	$Camera2D.moveCamera(pos, speed, callback)
+
+func zoomCamera(to, speed, callback):
+	$Camera2D.zoomCamera(to, speed, callback)
+
+func cameraTrack(value):
+	$Camera2D.cameraTrack(value)
+
+func pause(value, callback):
+	$pauseTimer.set_wait_time(value)
+	pauseTimerCallback = callback
+	$pauseTimer.start()
+
+func seperate(value, callback):
+	setState(func(s): s["seperate"] = value)
+	callback.call()
+
+func calcDiffTime(prev, target):
+	return (target - prev).length() / 32 * 0.2
+
+func charMoveComplete(charName, pos, callback):
+	var cell = worldToCell(pos)
+	setState(func(s): s[charName]["cell"] = cell)
+	callback.call()
+
+func move(charName, points, callback):
+	var charNode = leoNode if charName == "leo" else benNode
+	var tween = create_tween()
+	var prevPos = charNode.get_global_position()
+	for point in points:
+		var targetPos = worldToCell($eventAssets.get_node(point).get_global_position()) * 32.0
+		tween.tween_property(charNode, "position", targetPos, calcDiffTime(prevPos, targetPos))
+		prevPos = targetPos
+	tween.tween_callback(func(): charMoveComplete(charName, prevPos, callback))
+
 func _process(_delta):
 	pass
+
+func _on_pause_timer_timeout():
+	pauseTimerCallback.call()
+	pauseTimerCallback = null

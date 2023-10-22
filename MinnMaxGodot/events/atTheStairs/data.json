@@ -2,10 +2,23 @@
 	"data": [
 		{
 			"type": "function",
+			"name": "camera",
+			"value": {
+				"to": "leo",
+				"speed": 1
+			}
+		},
+		{
+			"type": "function",
+			"name": "switch",
+			"value": "leo"
+		},
+		{
+			"type": "function",
 			"name": "move",
 			"value": {
 				"name": "leo",
-				"points": ["the_stairs"]
+				"points": ["leo_one", "leo_two", "the_stairs"]
 			}
 		},
 		{
@@ -22,11 +35,6 @@
 			"type": "function",
 			"name": "seperate",
 			"value": false
-		},
-		{
-			"type": "function",
-			"name": "switch",
-			"value": "leo"
 		},				
 		{
 			"type": "text",

@@ -69,14 +69,14 @@ sources/2 = SubResource("TileSetAtlasSource_ity5p")
 sources/3 = SubResource("TileSetAtlasSource_hc6do")
 sources/4 = SubResource("TileSetAtlasSource_aathe")
 
-[node name="main" type="Node" node_paths=PackedStringArray("leoNode", "benNode", "tagsNode", "canvasLayerNode", "canvasModulate", "eventArtNode")]
+[node name="main" type="Node" node_paths=PackedStringArray("leoNode", "benNode", "tagsNode", "canvasLayerNode", "canvasModulate", "eventAssetsNode")]
 script = ExtResource("1_wx1i1")
 leoNode = NodePath("leo")
 benNode = NodePath("ben")
 tagsNode = NodePath("tags")
 canvasLayerNode = NodePath("CanvasLayer")
 canvasModulate = NodePath("CanvasModulate")
-eventArtNode = NodePath("eventArt")
+eventAssetsNode = NodePath("eventAssets")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 script = ExtResource("2_5cmae")
@@ -303,7 +303,7 @@ limit_top = 0
 script = ExtResource("32_s41ph")
 
 [node name="leo" type="Node2D" parent="."]
-position = Vector2(864, 224)
+position = Vector2(576, 192)
 script = ExtResource("2_g2cil")
 charName = "leo"
 
@@ -313,7 +313,7 @@ position = Vector2(16, 16)
 texture = ExtResource("1_sodhu")
 
 [node name="ben" type="Node2D" parent="."]
-position = Vector2(896, 224)
+position = Vector2(608, 192)
 script = ExtResource("2_g2cil")
 charName = "ben"
 
@@ -432,6 +432,7 @@ modulate = Color(0.207843, 0.6, 0.364706, 1)
 texture = ExtResource("1_sodhu")
 
 [node name="afterIce2" type="Node2D" parent="tags"]
+visible = false
 position = Vector2(528, 336)
 
 [node name="Sprite2D" type="Sprite2D" parent="tags/afterIce2"]
@@ -453,14 +454,14 @@ modulate = Color(0.207843, 0.6, 0.364706, 1)
 texture = ExtResource("1_sodhu")
 
 [node name="topForestHill" type="Node2D" parent="tags"]
-position = Vector2(880, 336)
+position = Vector2(912, 336)
 
 [node name="Sprite2D" type="Sprite2D" parent="tags/topForestHill"]
 modulate = Color(0.207843, 0.6, 0.364706, 1)
 texture = ExtResource("1_sodhu")
 
 [node name="atTheStairs" type="Node2D" parent="tags"]
-position = Vector2(944, 336)
+position = Vector2(1008, 400)
 
 [node name="Sprite2D" type="Sprite2D" parent="tags/atTheStairs"]
 modulate = Color(0.207843, 0.6, 0.364706, 1)
@@ -523,6 +524,7 @@ modulate = Color(0.207843, 0.6, 0.364706, 1)
 texture = ExtResource("1_sodhu")
 
 [node name="atTheWindow" type="Node2D" parent="tags"]
+visible = false
 position = Vector2(1840, 144)
 
 [node name="Sprite2D" type="Sprite2D" parent="tags/atTheWindow"]
@@ -530,17 +532,52 @@ modulate = Color(0.207843, 0.6, 0.364706, 1)
 texture = ExtResource("1_sodhu")
 
 [node name="overByLeo" type="Node2D" parent="tags"]
+visible = false
 position = Vector2(1968, 144)
 
 [node name="Sprite2D" type="Sprite2D" parent="tags/overByLeo"]
 modulate = Color(0.207843, 0.6, 0.364706, 1)
 texture = ExtResource("1_sodhu")
 
-[node name="eventArt" type="Node2D" parent="."]
+[node name="eventAssets" type="Node2D" parent="."]
 
-[node name="blumpo" type="Sprite2D" parent="eventArt"]
+[node name="blumpo" type="Sprite2D" parent="eventAssets"]
 visible = false
 position = Vector2(784, 240)
 texture = ExtResource("1_sodhu")
 
+[node name="monster_drain" type="Node2D" parent="eventAssets"]
+position = Vector2(656, 464)
+
+[node name="Sprite2D" type="Sprite2D" parent="eventAssets/monster_drain"]
+texture = ExtResource("1_sodhu")
+
+[node name="leo_one" type="Node2D" parent="eventAssets"]
+position = Vector2(912, 496)
+
+[node name="Sprite2D" type="Sprite2D" parent="eventAssets/leo_one"]
+texture = ExtResource("1_sodhu")
+
+[node name="leo_two" type="Node2D" parent="eventAssets"]
+position = Vector2(1008, 496)
+
+[node name="Sprite2D" type="Sprite2D" parent="eventAssets/leo_two"]
+texture = ExtResource("1_sodhu")
+
+[node name="the_stairs" type="Node2D" parent="eventAssets"]
+position = Vector2(1008, 432)
+
+[node name="Sprite2D" type="Sprite2D" parent="eventAssets/the_stairs"]
+texture = ExtResource("1_sodhu")
+
+[node name="after_log" type="Node2D" parent="eventAssets"]
+position = Vector2(1168, 336)
+
+[node name="Sprite2D" type="Sprite2D" parent="eventAssets/after_log"]
+texture = ExtResource("1_sodhu")
+
+[node name="pauseTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="CanvasLayer/achievementBox/upTimer" to="CanvasLayer" method="_on_up_timer_timeout"]
+[connection signal="timeout" from="pauseTimer" to="." method="_on_pause_timer_timeout"]

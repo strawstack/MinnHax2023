@@ -1,6 +1,10 @@
 {
 	"data": [
 		{
+			"type": "function",
+			"name": "dimLight"
+		},
+		{
 			"type": "text",
 			"name": "ben",
 			"value": "Isn’t this cool lookin’. It’s like a martian landscape."
@@ -24,6 +28,6 @@
 			"type": "text",
 			"name": "ben",
 			"value": "Wouldn’t it be awesome to just hang out here, light a fire, and tell stories."
-		}
+		}		
 	]
 }

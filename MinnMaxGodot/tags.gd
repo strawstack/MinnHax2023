@@ -11,9 +11,17 @@ var steps
 func _ready():
 	gc = get_tree().root.get_node("main")
 	canvasLayerNode = gc.getCanvasLayer()
+	var hidden = {"afterIce2": true, "overByLeo": true, "atTheWindow": true}
 	for child in get_children():
-		var hashCell = gc.hashCell(gc.worldToCell(child.get_global_position()))
-		tagLookup[hashCell] = child
+		if not (child.name in hidden):
+			var hashCell = gc.hashCell(gc.worldToCell(child.get_global_position()))
+			tagLookup[hashCell] = child
+
+func showTag(tagName):
+	var node = get_node(tagName)
+	var hashCell = gc.hashCell(gc.worldToCell(node.get_global_position()))
+	tagLookup[hashCell] = node
+	node.set_visible(true)
 
 func callStartEvent(pathName):
 	var jsonString = readFile(pathName)
@@ -61,17 +69,46 @@ func nextStep():
 		index += 1
 		if step["type"] == "text":
 			handleText(step["name"], step["value"])
+			
 		elif step["type"] == "achievement":
 			handleAchievement(step["name"], step["value"])
+			
 		elif step["type"] == "function":
+			
 			if step["name"] == "switch":
 				handleSwitch(step["value"])
+				
 			elif step["name"] == "showBlumpo":
 				gc.getEventArtNode().get_node("blumpo").set_visible(true)
 				stepComplete()
+				
 			elif step["name"] == "camera_rotate":
 				gc.cameraRotate(step["value"])
 				stepComplete()
+				
+			elif step["name"] == "camera":
+				gc.moveCamera(step["value"]["to"], step["value"]["speed"], stepComplete)
+				
+			elif step["name"] == "zoom":
+				gc.zoomCamera(step["value"]["to"], step["value"]["speed"], stepComplete)
+				
+			elif step["name"] == "camera_track":
+				gc.cameraTrack(step["value"])
+				stepComplete()
+				
+			elif step["name"] == "pause":
+				gc.pause(step["value"], stepComplete)
+				
+			elif step["name"] == "seperate":
+				gc.seperate(step["value"], stepComplete)
+				
+			elif step["name"] == "move":
+				gc.move(step["value"]["name"], step["value"]["points"], stepComplete)
+				
+			elif step["name"] == "showTag":
+				showTag(step["value"])
+				stepComplete()
+				
 			else:
 				print("Warning: ", step["type"], ": ", step["name"])
 				stepComplete()

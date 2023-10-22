@@ -1,6 +1,11 @@
 {
 	"data": [
 		{
+			"type": "function",
+			"name": "showTag",
+			"value": "atTheWindow"
+		},
+		{
 			"type": "text",
 			"name": "ben",
 			"value": "How'd you like to handle this Leo?"

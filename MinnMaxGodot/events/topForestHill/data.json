@@ -2,6 +2,14 @@
 	"data": [
 		{
 			"type": "function",
+			"name": "camera",
+			"value": {
+				"to": "ben",
+				"speed": 1
+			}
+		},	
+		{
+			"type": "function",
 			"name": "switch",
 			"value": "ben"
 		}
