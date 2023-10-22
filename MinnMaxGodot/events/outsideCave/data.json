@@ -43,7 +43,7 @@
 		{
 			"type": "achievement",
 			"name": "Hold the Camera.",
-			"value": "camera_spin.mp3"
+			"value": "camera_spin"
 		},		
 		{
 			"type": "text",

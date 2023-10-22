@@ -53,7 +53,7 @@
 		{
 			"type": "achievement",
 			"name": "Go Sonic Go!",
-			"value": "go_sonic.mp3"
+			"value": "go_sonic"
 		},		
 		{
 			"type": "text",

@@ -13,7 +13,7 @@
 		{
 			"type": "achievement",
 			"name": "See ya later!",
-			"value": "bye.mp3"
+			"value": "bye"
 		},
 		{
 			"type": "text",
@@ -33,7 +33,7 @@
 		{
 			"type": "achievement",
 			"name": "Rob the DQ.",
-			"value": "card.mp3"
+			"value": "card"
 		},
 		{
 			"type": "function",

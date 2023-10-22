@@ -74,7 +74,7 @@
 		{
 			"type": "achievement",
 			"name": "Well.. we tried.",
-			"value": "we_tried.mp3"
+			"value": "we_tried"
 		},
 		{
 			"type": "text",

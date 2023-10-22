@@ -8,7 +8,7 @@
 		{
 			"type": "achievement",
 			"name": "Initialize Sport Mode.",
-			"value": "sport_mode.mp3"
+			"value": "sport_mode"
 		},		
 		{
 			"type": "text",

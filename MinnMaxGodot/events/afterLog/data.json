@@ -61,7 +61,7 @@
 		{
 			"type": "achievement",
 			"name": "Don't drink in the winter.",
-			"value": "drink_in_winter.mp3"
+			"value": "drink_in_winter"
 		},
 		{
 			"type": "text",

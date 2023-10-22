@@ -73,7 +73,7 @@
 		{
 			"type": "achievement",
 			"name": "Do the Alone thing.",
-			"value": "alone_thing.mp3"
+			"value": "alone_thing"
 		},		
 		{
 			"type": "text",

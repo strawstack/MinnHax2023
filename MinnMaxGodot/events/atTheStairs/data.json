@@ -11,7 +11,7 @@
 		{
 			"type": "achievement",
 			"name": "Hero!",
-			"value": "what_a_hero.mp3"
+			"value": "what_a_hero"
 		},
 		{
 			"type": "text",

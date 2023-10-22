@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://yigtnsbkj52c"]
+[gd_scene load_steps=40 format=3 uid="uid://yigtnsbkj52c"]
 
 [ext_resource type="Texture2D" uid="uid://hxoeyl6kd8ly" path="res://sketchTiles/dirt.png" id="1_1yxql"]
 [ext_resource type="Texture2D" uid="uid://cc6d65x03wtn7" path="res://debugAssets/camera_size.png" id="1_ltrgk"]
@@ -7,12 +7,32 @@
 [ext_resource type="Texture2D" uid="uid://bpgeeb3gdmf5e" path="res://sketchTiles/forest.png" id="2_0b0oq"]
 [ext_resource type="Theme" uid="uid://lpqot0jjb06i" path="res://theme.tres" id="2_1g25m"]
 [ext_resource type="Script" path="res://player.gd" id="2_g2cil"]
+[ext_resource type="AudioStream" uid="uid://bljoixrikalnd" path="res://eventAudio/walk_minnmax_style.mp3" id="2_h7bwe"]
 [ext_resource type="Script" path="res://CanvasLayer.gd" id="2_kby22"]
 [ext_resource type="Texture2D" uid="uid://oj2mpklyemir" path="res://camera_border.png" id="2_x68qe"]
+[ext_resource type="AudioStream" uid="uid://e3wb2i4rfeeb" path="res://eventAudio/alone_thing.mp3" id="2_xyofk"]
+[ext_resource type="AudioStream" uid="uid://cdyqkcu8ai7gl" path="res://eventAudio/go_sonic.mp3" id="3_mpsmb"]
 [ext_resource type="Texture2D" uid="uid://b2ngcyh38rrkx" path="res://sketchTiles/path.png" id="3_vgt1p"]
 [ext_resource type="Texture2D" uid="uid://bt1org0pse514" path="res://sketchTiles/road.png" id="4_coeis"]
+[ext_resource type="AudioStream" uid="uid://c4qlsxg44dhq7" path="res://eventAudio/bye.mp3" id="4_lcfo5"]
+[ext_resource type="AudioStream" uid="uid://c5vt43u2px2h" path="res://eventAudio/card.mp3" id="5_4wwhh"]
 [ext_resource type="Texture2D" uid="uid://d0eexcrkvglwl" path="res://sketchTiles/water.png" id="5_mt5f3"]
+[ext_resource type="AudioStream" uid="uid://b8p7kd0cvkdrh" path="res://eventAudio/camera_spin.mp3" id="6_g22kl"]
+[ext_resource type="AudioStream" uid="uid://dip7p4nqf55xc" path="res://eventAudio/tennis_shoes.mp3" id="7_pmunk"]
+[ext_resource type="AudioStream" uid="uid://brslk3uhuyjld" path="res://eventAudio/drink_in_winter.mp3" id="8_ijmye"]
+[ext_resource type="AudioStream" uid="uid://bwi8dn1amntrk" path="res://eventAudio/we_tried.mp3" id="9_g5s1d"]
+[ext_resource type="AudioStream" uid="uid://c3fftwd6byw7a" path="res://eventAudio/spray_paint.mp3" id="10_bayou"]
+[ext_resource type="AudioStream" uid="uid://cxtun813gt3ix" path="res://eventAudio/hella_rich.mp3" id="11_q56bd"]
+[ext_resource type="AudioStream" uid="uid://treg2hvn5nyq" path="res://eventAudio/smell_that.mp3" id="12_1akn4"]
 [ext_resource type="Script" path="res://tags.gd" id="12_yauqq"]
+[ext_resource type="AudioStream" uid="uid://c82m8duvxrjq1" path="res://eventAudio/what_a_hero.mp3" id="14_5x8db"]
+[ext_resource type="AudioStream" uid="uid://disnksh83hl1a" path="res://eventAudio/bombs_havent_touched.mp3" id="15_h5rqa"]
+[ext_resource type="AudioStream" uid="uid://do005otl61peu" path="res://eventAudio/infalable.mp3" id="16_gr201"]
+[ext_resource type="AudioStream" uid="uid://bg0ndv4xi5nks" path="res://eventAudio/blumbo.mp3" id="17_xl62n"]
+[ext_resource type="AudioStream" uid="uid://b73yrf3qf6d81" path="res://eventAudio/cave_for_people.mp3" id="18_vk0en"]
+[ext_resource type="AudioStream" uid="uid://dj2k4d0u2xpb8" path="res://eventAudio/small_cotton.mp3" id="19_nt63g"]
+[ext_resource type="AudioStream" uid="uid://dy36gmdqghsn1" path="res://eventAudio/sport_mode.mp3" id="20_r8vij"]
+[ext_resource type="AudioStream" uid="uid://dyvrx7mmv6atb" path="res://eventAudio/crock_and_rock.mp3" id="21_kgasq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cbpvf"]
 texture = ExtResource("1_1yxql")
@@ -53,6 +73,68 @@ leoNode = NodePath("leo")
 benNode = NodePath("ben")
 tagsNode = NodePath("tags")
 canvasLayerNode = NodePath("CanvasLayer")
+
+[node name="audioStreams" type="Node2D" parent="."]
+
+[node name="walk_minnmax_style" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("2_h7bwe")
+
+[node name="go_sonic" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("3_mpsmb")
+
+[node name="bye" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("4_lcfo5")
+
+[node name="card" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("5_4wwhh")
+
+[node name="camera_spin" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("6_g22kl")
+
+[node name="tennis_shoes" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("7_pmunk")
+
+[node name="drink_in_winter" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("8_ijmye")
+
+[node name="we_tried" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("9_g5s1d")
+
+[node name="spray_paint" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("10_bayou")
+
+[node name="hella_rich" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("11_q56bd")
+
+[node name="smell_that" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("12_1akn4")
+
+[node name="alone_thing" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("2_xyofk")
+
+[node name="what_a_hero" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("14_5x8db")
+
+[node name="bombs_havent_touched" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("15_h5rqa")
+
+[node name="infalable" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("16_gr201")
+
+[node name="blumbo" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("17_xl62n")
+
+[node name="cave_for_people" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("18_vk0en")
+
+[node name="small_cotton" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("19_nt63g")
+
+[node name="sport_mode" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("20_r8vij")
+
+[node name="crock_and_rock" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("21_kgasq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("2_kby22")

@@ -18,7 +18,7 @@
 		{
 			"type": "achievement",
 			"name": "Cotton Candy Blizzard!",
-			"value": "small_cotton.mp3"
+			"value": "small_cotton"
 		},
 		{
 			"type": "function",

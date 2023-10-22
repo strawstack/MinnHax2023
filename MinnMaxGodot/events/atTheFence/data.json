@@ -8,7 +8,7 @@
 		{
 			"type": "achievement",
 			"name": "Bring your spray paint.",
-			"value": "spray_paint.mp3"
+			"value": "spray_paint"
 		},
 		{
 			"type": "text",

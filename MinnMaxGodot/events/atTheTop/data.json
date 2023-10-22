@@ -3,7 +3,7 @@
 		{
 			"type": "achievement",
 			"name": "The bombs haven’t touched here.",
-			"value": "bombs_havent_touched.mp3"
+			"value": "bombs_havent_touched"
 		},
 		{
 			"type": "text",
