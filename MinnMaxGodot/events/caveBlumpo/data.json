@@ -26,6 +26,10 @@
 			"value": "blumpo"
 		},
 		{
+			"type": "function",
+			"name": "showBlumpo"
+		},		
+		{
 			"type": "text",
 			"name": "leo",
 			"value": "It’s Blumpo."

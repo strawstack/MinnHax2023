@@ -66,10 +66,18 @@ func nextStep():
 		elif step["type"] == "function":
 			if step["name"] == "switch":
 				handleSwitch(step["value"])
+			elif step["name"] == "showBlumpo":
+				gc.getEventArtNode().get_node("blumpo").set_visible(true)
+				stepComplete()
+			elif step["name"] == "camera_rotate":
+				gc.cameraRotate(step["value"])
+				stepComplete()
 			else:
 				print("Warning: ", step["type"], ": ", step["name"])
+				stepComplete()
 		else:
 			print("Warning: ", step["type"])
+			stepComplete()
 
 func handleText(charName, value):
 	canvasLayerNode.showText(charName, value, stepComplete)
