@@ -3,66 +3,88 @@
 		{
 			"type": "text",
 			"name": "ben",
-			"value": "message"
+			"value": "Leo, are you seeing what I'm seeing?"
 		},
 		{
 			"type": "text",
 			"name": "leo",
-			"value": "message"
+			"value": "Yeah, is that going to show up on the camera? Janet, can you see cool stuff here?"
 		},
 		{
 			"type": "text",
 			"name": "janet",
-			"value": "message"
+			"value": "I see trees…"
 		},
 		{
 			"type": "text",
 			"name": "leo",
-			"value": "message"
+			"value": "I love that Louis Armstrong song."
 		},
 		{
 			"type": "text",
 			"name": "janet",
-			"value": "message"
+			"value": "Haha."
 		},
 		{
 			"type": "text",
 			"name": "ben",
-			"value": "message"
+			"value": "Across the river there's a little, uh, what do you call it, inlet, but people put a silly monster face on it. Okay, can you see that? Way over there?"
 		},
 		{
 			"type": "text",
 			"name": "janet",
-			"value": "message"
+			"value": "Umm, not quite."
 		},
 		{
 			"type": "text",
 			"name": "ben",
-			"value": "message"
+			"value": "Everybody digitally zoom in."
 		},
 		{
 			"type": "function",
 			"name": "camera",
 			"value": {
-				"to": "point_name"
+				"to": "point_name",
+				"speed": 1000
 			}
 		},		
 		{
 			"type": "function",
 			"name": "zoom",
 			"value": {
-				"to": 2
+				"to": 2,
+				"speed": 1000
+			}
+		},
+		{
+			"type": "function",
+			"name": "zoom",
+			"value": {
+				"to": 1,
+				"speed": 1000
+			}
+		},		
+		{
+			"type": "function",
+			"name": "camera",
+			"value": {
+				"to": "character"
 			}
 		},
 		{
 			"type": "achievement",
 			"name": "Well.. we tried.",
-			"value": "[clip name]"
+			"value": "we_tried.mp3"
 		},
 		{
 			"type": "text",
 			"name": "ben",
 			"value": "Well… we tried. It’s probably the coolest thing you could possibly imagine."
-		}
+		},
+		{
+			"type": "function",
+			"name": "switch",
+			"value": "ben"
+		}		
 	]
 }

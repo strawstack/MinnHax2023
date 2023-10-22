@@ -29,6 +29,16 @@
 			"type": "text",
 			"name": "leo",
 			"value": "Let’s see how this goes!"
+		},
+		{
+			"type": "function",
+			"name": "switch",
+			"value": "leo"
+		},
+		{
+			"type": "function",
+			"name": "seperate",
+			"value": true
 		}
 	]
 }

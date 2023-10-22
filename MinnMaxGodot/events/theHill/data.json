@@ -46,14 +46,19 @@
 			"value": "Good job Leo, but, in the future, you ask ‘what's your budget’; never tell them the rate right away haha."
 		},
 		{
+			"type": "function",
+			"name": "seperate",
+			"value": true
+		},		
+		{
 			"type": "achievement",
 			"name": "Go Sonic Go!",
-			"value": "[clip name]"
+			"value": "go_sonic.mp3"
 		},		
 		{
 			"type": "text",
 			"name": "ben",
 			"value": "Go Sonic Go!"
-		}
+		}		
 	]
 }

@@ -2,19 +2,35 @@
 	"data": [
 		{
 			"type": "function",
-			"name": "fire",
+			"name": "cutscene",
+			"value": "fire"
+		},
+		{
+			"type": "function",
+			"name": "seperate",
+			"value": true
+		},
+		{
+			"type": "function",
+			"name": "move",
 			"value": {
-				"from": "point_name",
-				"to": "point_name",
-				"speed": 1000
+				"name": "ben",
+				"points": ["ben_chair"]
 			}
 		},
 		{
 			"type": "function",
+			"name": "move",
+			"value": {
+				"name": "leo",
+				"points": ["leo_chair"]
+			}
+		},			
+		{
+			"type": "function",
 			"name": "camera",
 			"value": {
-				"from": "point_name",
-				"to": "point_name",
+				"to": "house_over_water",
 				"speed": 1000
 			}
 		},
@@ -27,8 +43,7 @@
 			"type": "function",
 			"name": "camera",
 			"value": {
-				"from": "point_name",
-				"to": "point_name",
+				"to": "character",
 				"speed": 1000
 			}
 		},
@@ -40,12 +55,43 @@
 		{
 			"type": "achievement",
 			"name": "Rich as Hell.",
-			"value": "[clip name]"
+			"value": "hella_rich.mp3"
 		},
 		{
 			"type": "text",
 			"name": "janet",
 			"value": "Oh, hell yeah cause they're rich as hell; they're, yeah, they're ridiculously rich."
+		},
+		{
+			"type": "function",
+			"name": "cutscene",
+			"value": "fire_ends"
+		},
+		{
+			"type": "function",
+			"name": "move",
+			"value": {
+				"name": "ben",
+				"points": ["after_fire_ben"]
+			}
+		},
+		{
+			"type": "function",
+			"name": "move",
+			"value": {
+				"name": "leo",
+				"points": ["after_fire_leo"]
+			}
+		},
+		{
+			"type": "function",
+			"name": "seperate",
+			"value": false
+		},
+		{
+			"type": "function",
+			"name": "switch",
+			"value": "leo"
 		}
 	]
 }

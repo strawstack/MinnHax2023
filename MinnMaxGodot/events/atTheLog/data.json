@@ -61,9 +61,19 @@
 			"value": "No you're not. You’re not several miles. You’re like maybe one haha."
 		},
 		{
+			"type": "function",
+			"name": "switch",
+			"value": "ben"
+		},
+		{
+			"type": "function",
+			"name": "seperate",
+			"value": true
+		},
+		{
 			"type": "achievement",
 			"name": "Do the Alone thing.",
-			"value": "[clip name]"
+			"value": "alone_thing.mp3"
 		},		
 		{
 			"type": "text",

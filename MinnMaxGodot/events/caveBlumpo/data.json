@@ -23,7 +23,7 @@
 		{
 			"type": "achievement",
 			"name": "ach_name",
-			"value": "[clip name]"
+			"value": "blumbo.mp3"
 		},
 		{
 			"type": "text",

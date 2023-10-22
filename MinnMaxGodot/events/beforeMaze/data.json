@@ -13,7 +13,7 @@
 		{
 			"type": "achievement",
 			"name": "We’re infallible.",
-			"value": "[clip name]"
+			"value": "infalable.mp3"
 		},
 		{
 			"type": "text",

@@ -78,7 +78,8 @@ offset_bottom = 85.0
 theme = ExtResource("2_1g25m")
 text = "Sample dialogue this could be long. I should keep writting to fill the whole space in order to make sure everything wraps correctly and to test how much text can fit in this space before we need to add..."
 autowrap_mode = 2
-visible_ratio = -0.00490196
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="textBoxRight" type="Node2D" parent="CanvasLayer"]
 visible = false
@@ -238,6 +239,209 @@ script = ExtResource("12_yauqq")
 position = Vector2(272, 144)
 
 [node name="Sprite2D" type="Sprite2D" parent="tags/halfwayToTurn"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="atTheTurn" type="Node2D" parent="tags"]
+position = Vector2(400, 144)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/atTheTurn"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="halfwayDownPath" type="Node2D" parent="tags"]
+position = Vector2(528, 144)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/halfwayDownPath"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="atTheFence" type="Node2D" parent="tags"]
+position = Vector2(656, 144)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/atTheFence"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="halfwayFenceToLake" type="Node2D" parent="tags"]
+position = Vector2(784, 144)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/halfwayFenceToLake"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="atTheLake" type="Node2D" parent="tags"]
+position = Vector2(912, 144)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/atTheLake"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="halfwayToIceCave" type="Node2D" parent="tags"]
+position = Vector2(1040, 144)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/halfwayToIceCave"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="entranceToCave" type="Node2D" parent="tags"]
+position = Vector2(1040, 272)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/entranceToCave"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="caveGraffiti" type="Node2D" parent="tags"]
+position = Vector2(944, 272)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/caveGraffiti"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="caveBlumpo" type="Node2D" parent="tags"]
+position = Vector2(816, 272)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/caveBlumpo"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="outsideCave" type="Node2D" parent="tags"]
+position = Vector2(688, 272)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/outsideCave"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="atLookout" type="Node2D" parent="tags"]
+position = Vector2(560, 272)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/atLookout"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="atCliff" type="Node2D" parent="tags"]
+position = Vector2(432, 272)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/atCliff"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="icePath" type="Node2D" parent="tags"]
+position = Vector2(432, 336)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/icePath"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="afterIce" type="Node2D" parent="tags"]
+position = Vector2(560, 336)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/afterIce"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="afterIce2" type="Node2D" parent="tags"]
+position = Vector2(528, 336)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/afterIce2"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="theHill" type="Node2D" parent="tags"]
+position = Vector2(688, 336)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/theHill"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="halfwayUpHill" type="Node2D" parent="tags"]
+position = Vector2(816, 336)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/halfwayUpHill"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="topForestHill" type="Node2D" parent="tags"]
+position = Vector2(880, 336)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/topForestHill"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="atTheStairs" type="Node2D" parent="tags"]
+position = Vector2(944, 336)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/atTheStairs"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="atTheLog" type="Node2D" parent="tags"]
+position = Vector2(1072, 336)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/atTheLog"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="afterLog" type="Node2D" parent="tags"]
+position = Vector2(1200, 336)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/afterLog"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="beforeMaze" type="Node2D" parent="tags"]
+position = Vector2(1328, 336)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/beforeMaze"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="atTheBeach" type="Node2D" parent="tags"]
+position = Vector2(1456, 336)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/atTheBeach"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="atTheFire" type="Node2D" parent="tags"]
+position = Vector2(1584, 336)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/atTheFire"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="atTheTop" type="Node2D" parent="tags"]
+position = Vector2(1712, 336)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/atTheTop"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="halfwayToDairyQueen" type="Node2D" parent="tags"]
+position = Vector2(1840, 336)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/halfwayToDairyQueen"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="dairyQueen" type="Node2D" parent="tags"]
+position = Vector2(1840, 240)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/dairyQueen"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="atTheWindow" type="Node2D" parent="tags"]
+position = Vector2(1840, 144)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/atTheWindow"]
+modulate = Color(0.207843, 0.6, 0.364706, 1)
+texture = ExtResource("1_sodhu")
+
+[node name="overByLeo" type="Node2D" parent="tags"]
+position = Vector2(1968, 144)
+
+[node name="Sprite2D" type="Sprite2D" parent="tags/overByLeo"]
 modulate = Color(0.207843, 0.6, 0.364706, 1)
 texture = ExtResource("1_sodhu")
 

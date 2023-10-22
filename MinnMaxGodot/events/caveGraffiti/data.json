@@ -63,7 +63,7 @@
 		{
 			"type": "achievement",
 			"name": "This cave is for the people.",
-			"value": "[clip name]"
+			"value": "cave_for_people.mp3"
 		},
 		{
 			"type": "text",

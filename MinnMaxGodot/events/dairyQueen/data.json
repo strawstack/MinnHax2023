@@ -18,8 +18,13 @@
 		{
 			"type": "achievement",
 			"name": "Cotton Candy Blizzard!",
-			"value": "[clip name]"
+			"value": "small_cotton.mp3"
 		},
+		{
+			"type": "function",
+			"name": "seperate",
+			"value": true
+		},		
 		{
 			"type": "text",
 			"name": "leo",

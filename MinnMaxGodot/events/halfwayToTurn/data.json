@@ -18,7 +18,7 @@
 		{
 			"type": "achievement",
 			"name": "crocking it and rocking it",
-			"value": "[clip name]"
+			"value": "crock_and_rock.mp3"
 		},
 		{
 			"type": "text",

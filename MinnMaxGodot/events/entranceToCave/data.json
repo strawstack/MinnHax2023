@@ -9,6 +9,11 @@
 			"type": "text",
 			"name": "leo",
 			"value": "Woah!"
+		},
+		{
+			"type": "function",
+			"name": "switch",
+			"value": "leo"
 		}
 	]
 }

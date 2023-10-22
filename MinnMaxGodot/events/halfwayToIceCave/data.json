@@ -8,7 +8,7 @@
 		{
 			"type": "achievement",
 			"name": "Initialize Sport Mode.",
-			"value": "[clip name]"
+			"value": "sport_mode.mp3"
 		},		
 		{
 			"type": "text",
@@ -49,6 +49,11 @@
 			"type": "text",
 			"name": "ben",
 			"value": "That’s right... it’s a little easter egg for everybody."
-		}
+		},
+		{
+			"type": "function",
+			"name": "switch",
+			"value": "ben"
+		}		
 	]
 }

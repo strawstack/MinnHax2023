@@ -9,15 +9,27 @@
 			"type": "function",
 			"name": "camera",
 			"value": {
-				"from": "point_name",
-				"to": "point_name",
+				"to": "point_name/character",
 				"speed": 1000
 			}
 		},
 		{
-			"type": "move",
-			"name": "ben",
-			"value": ["point_name"]
+			"type": "function",
+			"name": "seperate",
+			"value": true
+		},
+		{
+			"type": "function",
+			"name": "switch",
+			"value": "leo"
+		},
+		{
+			"type": "function",
+			"name": "move",
+			"value": {
+				"name": "ben",
+				"points": ["point_name"]
+			}
 		},
 		{
 			"type": "achievement",

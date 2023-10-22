@@ -3,12 +3,17 @@
 		{
 			"type": "achievement",
 			"name": "The bombs haven’t touched here.",
-			"value": "[clip name]"
+			"value": "bombs_havent_touched.mp3"
 		},
 		{
 			"type": "text",
 			"name": "leo",
 			"value": "The bombs haven’t touched here. We made it!"
+		},
+		{
+			"type": "function",
+			"name": "switch",
+			"value": "ben"
 		}
 	]
 }

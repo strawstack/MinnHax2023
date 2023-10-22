@@ -1,15 +1,33 @@
 {
 	"data": [
 		{
+			"type": "function",
+			"name": "move",
+			"value": {
+				"name": "leo",
+				"points": ["the_stairs"]
+			}
+		},
+		{
 			"type": "achievement",
 			"name": "Hero!",
-			"value": "[clip name]"
+			"value": "what_a_hero.mp3"
 		},
 		{
 			"type": "text",
 			"name": "ben",
 			"value": "What a hero!"
 		},
+		{
+			"type": "function",
+			"name": "seperate",
+			"value": false
+		},
+		{
+			"type": "function",
+			"name": "switch",
+			"value": "leo"
+		},				
 		{
 			"type": "text",
 			"name": "leo",

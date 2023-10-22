@@ -39,6 +39,11 @@
 			"type": "text",
 			"name": "leo",
 			"value": "Let's get vertical!"
-		}
+		},
+		{
+			"type": "function",
+			"name": "switch",
+			"value": "leo"
+		}		
 	]
 }

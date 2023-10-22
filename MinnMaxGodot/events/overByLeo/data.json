@@ -1,6 +1,11 @@
 {
 	"data": [
 		{
+			"type": "function",
+			"name": "seperate",
+			"value": false
+		},
+		{
 			"type": "text",
 			"name": "ben",
 			"value": "I think that's a new show plus everybody. Thank you for voting for this.Thank you for the subs greatly appreciate it, but, hey, hats-off Janet. Thank you for being a great host!"
@@ -8,7 +13,7 @@
 		{
 			"type": "achievement",
 			"name": "See ya later!",
-			"value": "[clip name]"
+			"value": "bye.mp3"
 		},
 		{
 			"type": "text",
@@ -22,18 +27,20 @@
 		},
 		{
 			"type": "function",
-			"name": "fade",
-			"value": 1000
+			"name": "cutscene",
+			"value": "fade"
 		},
 		{
 			"type": "achievement",
 			"name": "Rob the DQ.",
-			"value": "[clip name]"
+			"value": "card.mp3"
 		},
 		{
 			"type": "function",
 			"name": "start",
-			"value": 4000
+			"value": {
+				"delay": 4000
+			}
 		}
 	]
 }

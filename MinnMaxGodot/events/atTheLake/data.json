@@ -23,7 +23,7 @@
 		{
 			"type": "achievement",
 			"name": "Smell that Mississip.",
-			"value": "[clip name]"
+			"value": "smell_that.mp3"
 		},
 		{
 			"type": "text",
