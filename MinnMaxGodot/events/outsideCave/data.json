@@ -34,7 +34,7 @@
 			"type": "function",
 			"name": "camera_rotate",
 			"value": true
-		},		
+		},
 		{
 			"type": "text",
 			"name": "leo",
@@ -44,7 +44,7 @@
 			"type": "achievement",
 			"name": "Hold the Camera.",
 			"value": "[clip name]"
-		},
+		},		
 		{
 			"type": "text",
 			"name": "ben",
