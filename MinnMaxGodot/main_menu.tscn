@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://628xhc6hv2oe"]
+[gd_scene load_steps=7 format=3 uid="uid://628xhc6hv2oe"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_87bu0"]
 [ext_resource type="Texture2D" uid="uid://djffunt6no6gc" path="res://white_cell.png" id="1_cpk18"]
 [ext_resource type="Theme" uid="uid://lpqot0jjb06i" path="res://theme.tres" id="2_g5r2d"]
+[ext_resource type="Script" path="res://mainMenu/CanvasModulate.gd" id="2_kll2d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b4any"]
 texture = ExtResource("1_cpk18")
@@ -15,6 +16,9 @@ sources/0 = SubResource("TileSetAtlasSource_b4any")
 
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_87bu0")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+script = ExtResource("2_kll2d")
 
 [node name="Background" type="TileMap" parent="."]
 modulate = Color(0.396078, 0.396078, 0.396078, 1)

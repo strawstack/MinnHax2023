@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://yigtnsbkj52c"]
+[gd_scene load_steps=41 format=3 uid="uid://yigtnsbkj52c"]
 
 [ext_resource type="Texture2D" uid="uid://hxoeyl6kd8ly" path="res://sketchTiles/dirt.png" id="1_1yxql"]
 [ext_resource type="Texture2D" uid="uid://cc6d65x03wtn7" path="res://debugAssets/camera_size.png" id="1_ltrgk"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://main.gd" id="1_wx1i1"]
 [ext_resource type="Texture2D" uid="uid://bpgeeb3gdmf5e" path="res://sketchTiles/forest.png" id="2_0b0oq"]
 [ext_resource type="Theme" uid="uid://lpqot0jjb06i" path="res://theme.tres" id="2_1g25m"]
+[ext_resource type="Script" path="res://main/CanvasModulate.gd" id="2_5cmae"]
 [ext_resource type="Script" path="res://player.gd" id="2_g2cil"]
 [ext_resource type="AudioStream" uid="uid://bljoixrikalnd" path="res://eventAudio/walk_minnmax_style.mp3" id="2_h7bwe"]
 [ext_resource type="Script" path="res://CanvasLayer.gd" id="2_kby22"]
@@ -28,7 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://c82m8duvxrjq1" path="res://eventAudio/what_a_hero.mp3" id="14_5x8db"]
 [ext_resource type="AudioStream" uid="uid://disnksh83hl1a" path="res://eventAudio/bombs_havent_touched.mp3" id="15_h5rqa"]
 [ext_resource type="AudioStream" uid="uid://do005otl61peu" path="res://eventAudio/infalable.mp3" id="16_gr201"]
-[ext_resource type="AudioStream" uid="uid://bg0ndv4xi5nks" path="res://eventAudio/blumbo.mp3" id="17_xl62n"]
+[ext_resource type="AudioStream" uid="uid://bg0ndv4xi5nks" path="res://eventAudio/blumpo.mp3" id="18_qc8x5"]
 [ext_resource type="AudioStream" uid="uid://b73yrf3qf6d81" path="res://eventAudio/cave_for_people.mp3" id="18_vk0en"]
 [ext_resource type="AudioStream" uid="uid://dj2k4d0u2xpb8" path="res://eventAudio/small_cotton.mp3" id="19_nt63g"]
 [ext_resource type="AudioStream" uid="uid://dy36gmdqghsn1" path="res://eventAudio/sport_mode.mp3" id="20_r8vij"]
@@ -67,12 +68,17 @@ sources/2 = SubResource("TileSetAtlasSource_ity5p")
 sources/3 = SubResource("TileSetAtlasSource_hc6do")
 sources/4 = SubResource("TileSetAtlasSource_aathe")
 
-[node name="main" type="Node" node_paths=PackedStringArray("leoNode", "benNode", "tagsNode", "canvasLayerNode")]
+[node name="main" type="Node" node_paths=PackedStringArray("leoNode", "benNode", "tagsNode", "canvasLayerNode", "canvasModulate")]
 script = ExtResource("1_wx1i1")
 leoNode = NodePath("leo")
 benNode = NodePath("ben")
 tagsNode = NodePath("tags")
 canvasLayerNode = NodePath("CanvasLayer")
+canvasModulate = NodePath("CanvasModulate")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+script = ExtResource("2_5cmae")
 
 [node name="audioStreams" type="Node2D" parent="."]
 
@@ -121,8 +127,8 @@ stream = ExtResource("15_h5rqa")
 [node name="infalable" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("16_gr201")
 
-[node name="blumbo" type="AudioStreamPlayer" parent="audioStreams"]
-stream = ExtResource("17_xl62n")
+[node name="blumpo" type="AudioStreamPlayer" parent="audioStreams"]
+stream = ExtResource("18_qc8x5")
 
 [node name="cave_for_people" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("18_vk0en")
@@ -295,7 +301,7 @@ script = ExtResource("2_g2cil")
 charName = "leo"
 
 [node name="Sprite2D" type="Sprite2D" parent="leo"]
-modulate = Color(0.878431, 0.380392, 0.290196, 1)
+modulate = Color(0.847059, 0.372549, 0.541176, 1)
 position = Vector2(16, 16)
 texture = ExtResource("1_sodhu")
 

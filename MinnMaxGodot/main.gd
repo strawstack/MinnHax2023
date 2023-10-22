@@ -1,13 +1,16 @@
 extends Node
 
-@export var leoNode: Node
-@export var benNode: Node
-@export var tagsNode: Node
-@export var canvasLayerNode: Node
+@export var leoNode: Node2D
+@export var benNode: Node2D
+@export var tagsNode: Node2D
+@export var canvasLayerNode: CanvasLayer
+@export var canvasModulate: CanvasModulate
+@export var audioStreams: Node2D
 
 var readyLookup = {
 	"leo": false,
-	"ben": false
+	"ben": false,
+	"light": false
 }
 
 var state = {
@@ -24,8 +27,14 @@ var state = {
 	}
 }
 
+func fadeInComplete():
+	setState(func(s): s["event"] = true)
+	reportReady("light")
+	var pathName = "res://events/start/data.json"
+	tagsNode.callStartEvent(pathName)
+
 func _ready():
-	pass
+	canvasModulate.fadeIn(fadeInComplete)
 
 func reportReady(key):
 	readyLookup[key] = true
@@ -54,6 +63,9 @@ func getState():
 	
 func setState(userFunction):
 	userFunction.call(getState())
+
+func playAudio(audioClip):
+	$audioStreams.get_node(audioClip).play()
 
 func _process(_delta):
 	pass

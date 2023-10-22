@@ -4,6 +4,8 @@ var CUT_OFF = 160
 var achUp = 0
 var achDown = 160
 
+var gc
+
 # Child nodes set by _ready
 var boxLeft
 var boxRight
@@ -23,7 +25,10 @@ var currentLine
 
 # Set by showText
 var targetLabel
-var stepComplete 
+var stepComplete
+
+# Track key press
+var keyPressActive = false
 
 var symbolLookup = {
 	",": true,
@@ -31,6 +36,7 @@ var symbolLookup = {
 }
 
 func _ready():
+	gc = get_tree().root.get_node("main")
 	boxLeft = get_node("textBoxLeft")
 	boxRight = get_node("textBoxRight")
 	achievementBox = get_node("achievementBox")
@@ -104,6 +110,7 @@ func noSpaces(line):
 
 func nextLine():
 	if index >= lines.size():
+		keyPressActive = false
 		boxLeft.set_visible(false)
 		boxRight.set_visible(false)
 		stepComplete.call()
@@ -112,10 +119,11 @@ func nextLine():
 		index += 1
 		targetLabel.set_visible_characters(-1)
 		targetLabel.set_text(line)
+		keyPressActive = true
 
 func achievementReady(audioClip):
 	# Play audio here
-	print("Play audio here", audioClip)
+	gc.playAudio(audioClip)
 	upTimer.start()
 
 func achTweenUp(audioClip):
@@ -132,8 +140,9 @@ func showAchievement(achName, audioClip):
 	achTweenUp(audioClip)
 
 func _process(_delta):
-	if Input.is_action_just_pressed("action"):
-		nextLine()
+	if keyPressActive:
+		if Input.is_action_just_pressed("action"):
+			nextLine()
 
 func _on_up_timer_timeout():
 	achTweenDown()

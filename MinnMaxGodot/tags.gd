@@ -13,17 +13,26 @@ func _ready():
 	canvasLayerNode = gc.getCanvasLayer()
 	for child in get_children():
 		var hashCell = gc.hashCell(gc.worldToCell(child.get_global_position()))
-		tagLookup[hashCell] = child.name
+		tagLookup[hashCell] = child
+
+func callStartEvent(pathName):
+	var jsonString = readFile(pathName)
+	var data = parseJSON(jsonString)
+	startEvent(data.data)
+
+func removeEvent(hashCell, eventNode):
+	tagLookup.erase(hashCell)
+	eventNode.set_visible(false)
 
 func triggerEvent(cell):
 	var hashCell = gc.hashCell(cell)
 	if hashCell in tagLookup:
 		gc.setState(func(s): s["event"] = true)
-		var eventName = tagLookup[hashCell]
+		var eventNode = tagLookup[hashCell]
+		var eventName = eventNode.name
 		var pathName = "res://events/" + eventName + "/data.json"
-		var jsonString = readFile(pathName)
-		var data = parseJSON(jsonString)
-		startEvent(data.data)
+		removeEvent(hashCell, eventNode)
+		callStartEvent(pathName)
 
 func readFile(pathName):
 	var file = FileAccess.open(pathName, FileAccess.READ)
@@ -54,12 +63,23 @@ func nextStep():
 			handleText(step["name"], step["value"])
 		elif step["type"] == "achievement":
 			handleAchievement(step["name"], step["value"])
+		elif step["type"] == "function":
+			if step["name"] == "switch":
+				handleSwitch(step["value"])
+			else:
+				print("Warning: ", step["type"], ": ", step["name"])
+		else:
+			print("Warning: ", step["type"])
 
 func handleText(charName, value):
 	canvasLayerNode.showText(charName, value, stepComplete)
 
 func handleAchievement(achName, value):
 	canvasLayerNode.showAchievement(achName, value)
+	stepComplete()
+
+func handleSwitch(charName):
+	gc.setState(func(s): s["active_char"] = charName)
 	stepComplete()
 
 func stepComplete():
