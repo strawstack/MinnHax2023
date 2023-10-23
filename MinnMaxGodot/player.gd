@@ -21,29 +21,29 @@ func _ready():
 		Vector2(-1, 0)
 	]
 	
-func movingFalse():
+func movingFalse(worldTarget):
+	set_global_position(worldTarget)
 	var state = gc.getState()
 	var curCell = currentCell()
 	if state["active_char"] == charName:
 		tagsNode.triggerEvent(curCell)
 		slip = gc.isIce(curCell)
-
 	gc.setState(func(s): s[charName]["moving"] = false)
 
 func move(targetCell):
 	
 	var curCell = currentCell()
 	
-	var tween = create_tween()
-	var worldTarget = gc.cellToWorld(targetCell)
-	tween.tween_property(self, "position", worldTarget, 0.2)
-	tween.tween_callback(movingFalse)
-	
 	# Announce movement
 	var state = gc.getState()
 	if not state["seperate"] and state["active_char"] == charName:
 		otherCharNode().listenForMovement(curCell)
-
+	
+	var tween = create_tween()
+	var worldTarget = gc.cellToWorld(targetCell)
+	tween.tween_property(self, "position", worldTarget, 0.2)
+	tween.tween_callback(func(): movingFalse(worldTarget))
+	
 func listenForMovement(targetCell):
 	gc.setState(func(s): s[charName]["cell"] = targetCell)
 
@@ -60,14 +60,16 @@ func processSlip(charState):
 	var fd = facingLookup[facing]
 	gc.setState(func(s): s[charName]["cell"] = charState["cell"] + fd)
 
-func _process(_delta):
+func _process(delta):
+	
+	print("_process(delta)")
 	
 	var state = gc.getState()
 	var charState = state[charName]
 	
 	if state["ready"]:
 		if (not charState["moving"]) and (not state["event"]):
-			if state["active_char"] == charName and not state[otherCharName()]["moving"]:
+			if state["active_char"] == charName: # and not state[otherCharName()]["moving"]
 
 				if slip:
 					slip = false
@@ -95,6 +97,7 @@ func _process(_delta):
 					elif Input.is_action_pressed("right"):
 						var tc = charState["cell"] + Vector2(1, 0)
 						if gc.inBounds(tc):
+							print("right: ", delta)
 							gc.setState(func(s): s[charName]["cell"] = tc)
 
 					elif Input.is_action_pressed("down"):
@@ -111,4 +114,5 @@ func _process(_delta):
 			var curCell = currentCell()
 			if not (newCell.is_equal_approx(curCell)):
 				gc.setState(func(s): s[charName]["moving"] = true)
+				print("move(newCell)")
 				move(newCell)
