@@ -21,8 +21,7 @@ func _ready():
 		Vector2(-1, 0)
 	]
 	
-func movingFalse(worldTarget):
-	set_global_position(worldTarget)
+func movingFalse():
 	var state = gc.getState()
 	var curCell = currentCell()
 	if state["active_char"] == charName:
@@ -41,8 +40,8 @@ func move(targetCell):
 	
 	var tween = create_tween()
 	var worldTarget = gc.cellToWorld(targetCell)
-	tween.tween_property(self, "position", worldTarget, 0.2)
-	tween.tween_callback(func(): movingFalse(worldTarget))
+	tween.tween_property(self, "position", worldTarget, 0.216)
+	tween.tween_callback(movingFalse)
 	
 func listenForMovement(targetCell):
 	gc.setState(func(s): s[charName]["cell"] = targetCell)
@@ -60,10 +59,48 @@ func processSlip(charState):
 	var fd = facingLookup[facing]
 	gc.setState(func(s): s[charName]["cell"] = charState["cell"] + fd)
 
-func _process(delta):
-	
-	print("_process(delta)")
-	
+func checkKeys(charState):
+	if Input.is_action_pressed("up"):
+		facing = 0
+		
+	elif Input.is_action_pressed("right"):
+		facing = 1
+
+	elif Input.is_action_pressed("down"):
+		facing = 2
+
+	elif Input.is_action_pressed("left"):
+		facing = 3
+		
+	if Input.is_action_pressed("up"):
+		var tc = charState["cell"] + Vector2(0, -1)
+		if gc.inBounds(tc):
+			gc.setState(func(s): s[charName]["cell"] = tc)
+		
+	elif Input.is_action_pressed("right"):
+		var tc = charState["cell"] + Vector2(1, 0)
+		if gc.inBounds(tc):
+			gc.setState(func(s): s[charName]["cell"] = tc)
+
+	elif Input.is_action_pressed("down"):
+		var tc = charState["cell"] + Vector2(0, 1)
+		if gc.inBounds(tc):
+			gc.setState(func(s): s[charName]["cell"] = tc)
+
+	elif Input.is_action_pressed("left"):
+		var tc = charState["cell"] + Vector2(-1, 0)
+		if gc.inBounds(tc):
+			gc.setState(func(s): s[charName]["cell"] = tc)
+
+func maybeMove():
+	var newCell = gc.getState()[charName]["cell"]
+	var curCell = currentCell()
+	if not (newCell.is_equal_approx(curCell)):
+		gc.setState(func(s): s[charName]["moving"] = true)
+		move(newCell)
+
+func _process(_delta):
+
 	var state = gc.getState()
 	var charState = state[charName]
 	
@@ -76,43 +113,6 @@ func _process(delta):
 					processSlip(charState)
 
 				else:
+					checkKeys(charState)
 
-					if Input.is_action_pressed("up"):
-						facing = 0
-						
-					elif Input.is_action_pressed("right"):
-						facing = 1
-					
-					elif Input.is_action_pressed("down"):
-						facing = 2
-					
-					elif Input.is_action_pressed("left"):
-						facing = 3
-						
-					if Input.is_action_pressed("up"):
-						var tc = charState["cell"] + Vector2(0, -1)
-						if gc.inBounds(tc):
-							gc.setState(func(s): s[charName]["cell"] = tc)
-						
-					elif Input.is_action_pressed("right"):
-						var tc = charState["cell"] + Vector2(1, 0)
-						if gc.inBounds(tc):
-							print("right: ", delta)
-							gc.setState(func(s): s[charName]["cell"] = tc)
-
-					elif Input.is_action_pressed("down"):
-						var tc = charState["cell"] + Vector2(0, 1)
-						if gc.inBounds(tc):
-							gc.setState(func(s): s[charName]["cell"] = tc)
-
-					elif Input.is_action_pressed("left"):
-						var tc = charState["cell"] + Vector2(-1, 0)
-						if gc.inBounds(tc):
-							gc.setState(func(s): s[charName]["cell"] = tc)
-
-			var newCell = gc.getState()[charName]["cell"]
-			var curCell = currentCell()
-			if not (newCell.is_equal_approx(curCell)):
-				gc.setState(func(s): s[charName]["moving"] = true)
-				print("move(newCell)")
-				move(newCell)
+			maybeMove()

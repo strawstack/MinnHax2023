@@ -251,6 +251,7 @@ stream = ExtResource("16_gr201")
 
 [node name="blumpo" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("18_qc8x5")
+volume_db = 10.0
 
 [node name="cave_for_people" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("18_vk0en")
