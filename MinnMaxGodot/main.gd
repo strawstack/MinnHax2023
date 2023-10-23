@@ -7,7 +7,7 @@ extends Node
 @export var canvasModulate: CanvasModulate
 @export var eventAssetsNode: Node2D
 
-var debug = false
+var debug = true
 
 var readyLookup = {
 	"leo": false,
