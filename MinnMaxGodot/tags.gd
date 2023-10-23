@@ -11,9 +11,9 @@ var steps
 func _ready():
 	gc = get_tree().root.get_node("main")
 	canvasLayerNode = gc.getCanvasLayer()
-	var hidden = {"afterIce2": true, "overByLeo": true, "atTheWindow": true}
+	var hiddenLookup = {"afterIce2": true, "overByLeo": true, "atTheWindow": true}
 	for child in get_children():
-		if not (child.name in hidden):
+		if not (child.name in hiddenLookup):
 			var hashCell = gc.hashCell(gc.worldToCell(child.get_global_position()))
 			tagLookup[hashCell] = child
 
@@ -108,7 +108,25 @@ func nextStep():
 			elif step["name"] == "showTag":
 				showTag(step["value"])
 				stepComplete()
+			
+			elif step["name"] == "dimLight":
+				gc.dimLight(stepComplete)
+			
+			elif step["name"] == "raiseLight":
+				gc.raiseLight(stepComplete)
 				
+			elif step["name"] == "start":
+				gc.backToStart(step["value"])
+			
+			elif step["name"] == "dimToBlack":
+				gc.dimToBlack(step["value"], stepComplete)
+			
+			elif step["name"] == "fireOn":
+				gc.fireOn()
+
+			elif step["name"] == "fireOff":
+				gc.fireOff()
+			
 			else:
 				print("Warning: ", step["type"], ": ", step["name"])
 				stepComplete()

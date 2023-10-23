@@ -42,6 +42,9 @@ func _ready():
 		reportReady("light")
 	else:
 		canvasModulate.fadeIn(fadeInComplete)
+	
+	# Force correct visibility
+	$CanvasLayer.set_visible(true)
 
 func reportReady(key):
 	readyLookup[key] = true
@@ -79,6 +82,12 @@ func getBenNode():
 
 func setState(userFunction):
 	userFunction.call(getState())
+
+func isIce(cell):
+	return $ice.isIce(cell)
+
+func inBounds(cell):
+	return not $bounds.inBounds(cell)
 
 func playAudio(audioClip):
 	$audioStreams.get_node(audioClip).play()
@@ -129,9 +138,37 @@ func move(charName, points, callback):
 		prevPos = targetPos
 	tween.tween_callback(func(): charMoveComplete(charName, prevPos, callback))
 
-func _process(_delta):
-	pass
+func dimLight(callback):
+	var tween = create_tween()
+	tween.tween_property($CanvasModulate, "color", Color(0.4, 0.4, 0.4), 2)
+	tween.tween_callback(callback)
+
+func raiseLight(callback):
+	var tween = create_tween()
+	tween.tween_property($CanvasModulate, "color", Color.WHITE, 2)
+	tween.tween_callback(callback)
+
+func dimToBlack(value, callback):
+	var tween = create_tween()
+	tween.tween_property($CanvasModulate, "color", Color.BLACK, value)
+	tween.tween_callback(callback)
+
+func backToStartComplete():
+	get_tree().change_scene_to_file("res://main_menu.tscn")
+
+func backToStart(value):
+	$pauseTimer.set_wait_time(value)
+	pauseTimerCallback = backToStartComplete
+	$pauseTimer.start()
+
+func fireOn():
+	$eventAssets.get_node("fireOn").set_visible(true)
+
+func fireOff():
+	$eventAssets.get_node("coals").set_visible(true)
+	$eventAssets.get_node("fireOn").set_visible(false)
 
 func _on_pause_timer_timeout():
-	pauseTimerCallback.call()
+	var temp = pauseTimerCallback
 	pauseTimerCallback = null
+	temp.call()

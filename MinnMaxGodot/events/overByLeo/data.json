@@ -27,9 +27,14 @@
 		},
 		{
 			"type": "function",
-			"name": "cutscene",
-			"value": "fade"
+			"name": "dimToBlack",
+			"value": 3
 		},
+		{
+			"type": "function",
+			"name": "pause",
+			"value": 1
+		},		
 		{
 			"type": "achievement",
 			"name": "Rob the DQ.",
@@ -38,9 +43,7 @@
 		{
 			"type": "function",
 			"name": "start",
-			"value": {
-				"delay": 4000
-			}
+			"value": 5
 		}
 	]
 }

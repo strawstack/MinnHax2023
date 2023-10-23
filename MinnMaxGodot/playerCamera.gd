@@ -37,18 +37,18 @@ func moveCameraComplete(pos, callback):
 	callback.call()
 
 func moveCamera(pos, speed, callback):
-	var tween = create_tween()
-	tween.tween_property(self, "position", pos, speed)
-	tween.tween_callback(func(): moveCameraComplete(pos, callback))
+	var lTween = create_tween()
+	lTween.tween_property(self, "position", pos, speed)
+	lTween.tween_callback(func(): moveCameraComplete(pos, callback))
 
 func zoomCameraComplete(value, callback):
 	set_zoom(Vector2(1, 1) * value)
 	callback.call()
 
 func zoomCamera(value, speed, callback):
-	var tween = create_tween()
-	tween.tween_property(self, "zoom", Vector2(1, 1) * value, speed)
-	tween.tween_callback(func(): zoomCameraComplete(value, callback))
+	var lTween = create_tween()
+	lTween.tween_property(self, "zoom", Vector2(1, 1) * value, speed)
+	lTween.tween_callback(func(): zoomCameraComplete(value, callback))
 
 func _process(delta):
 	var state = gc.getState()

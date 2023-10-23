@@ -2,7 +2,7 @@
 	"data": [
 		{
 			"type": "function",
-			"name": "startFire"
+			"name": "fireOn"
 		},
 		{
 			"type": "function",
@@ -32,6 +32,11 @@
 		},
 		{
 			"type": "function",
+			"name": "camera_track",
+			"value": false
+		},		
+		{
+			"type": "function",
 			"name": "camera",
 			"value": {
 				"to": "house_over_water",
@@ -54,7 +59,7 @@
 		{
 			"type": "text",
 			"name": "ben",
-			"value": "Do you think they’re happy Janet. Do you think by and large those people with those houses are happy?"
+			"value": "Do you think they’re happy Janet? Do you think by and large those people with those houses are happy?"
 		},
 		{
 			"type": "achievement",
@@ -102,6 +107,11 @@
 				"to": "leo",
 				"speed": 0.5
 			}
+		},		
+		{
+			"type": "function",
+			"name": "camera_track",
+			"value": true
 		},		
 		{
 			"type": "function",
