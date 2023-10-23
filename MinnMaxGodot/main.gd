@@ -7,6 +7,8 @@ extends Node
 @export var canvasModulate: CanvasModulate
 @export var eventAssetsNode: Node2D
 
+var debug = false
+
 var readyLookup = {
 	"leo": false,
 	"ben": false,
@@ -37,10 +39,10 @@ func fadeInComplete():
 	tagsNode.callStartEvent(pathName)
 
 func _ready():
-	var debug = true
 	if debug:
 		reportReady("light")
 	else:
+		canvasModulate.setBlack()
 		canvasModulate.fadeIn(fadeInComplete)
 	
 	# Force correct visibility

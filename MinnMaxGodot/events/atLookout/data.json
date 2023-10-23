@@ -78,7 +78,7 @@
 			"type": "function",
 			"name": "camera",
 			"value": {
-				"to": "character",
+				"to": "leo",
 				"speed": 1
 			}
 		},

@@ -123,9 +123,11 @@ func nextStep():
 			
 			elif step["name"] == "fireOn":
 				gc.fireOn()
+				stepComplete()
 
 			elif step["name"] == "fireOff":
 				gc.fireOff()
+				stepComplete()
 			
 			else:
 				print("Warning: ", step["type"], ": ", step["name"])
