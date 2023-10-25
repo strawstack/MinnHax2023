@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://yigtnsbkj52c"]
+[gd_scene load_steps=74 format=3 uid="uid://yigtnsbkj52c"]
 
 [ext_resource type="Texture2D" uid="uid://hxoeyl6kd8ly" path="res://sketchTiles/dirt.png" id="1_1yxql"]
 [ext_resource type="Texture2D" uid="uid://cc6d65x03wtn7" path="res://debugAssets/camera_size.png" id="1_ltrgk"]
@@ -37,6 +37,30 @@
 [ext_resource type="Script" path="res://playerCamera.gd" id="32_s41ph"]
 [ext_resource type="Script" path="res://ice.gd" id="36_2yx14"]
 [ext_resource type="Script" path="res://bounds.gd" id="37_skkux"]
+[ext_resource type="Texture2D" uid="uid://qjvtcmsmig6" path="res://charAnimation/ben/ben9.png" id="38_gim4s"]
+[ext_resource type="Texture2D" uid="uid://dmjrd6u1muvt2" path="res://charAnimation/leo/leo9.png" id="38_xkxa0"]
+[ext_resource type="Texture2D" uid="uid://b17jmv60d8wk6" path="res://charAnimation/leo/leo10.png" id="39_l43xq"]
+[ext_resource type="Texture2D" uid="uid://ke407goflh6h" path="res://charAnimation/ben/ben10.png" id="39_rc1gt"]
+[ext_resource type="Texture2D" uid="uid://dt84va4l8rd5l" path="res://charAnimation/ben/ben11.png" id="40_7xvn8"]
+[ext_resource type="Texture2D" uid="uid://bkgdrjjg085k3" path="res://charAnimation/leo/leo11.png" id="40_kgnww"]
+[ext_resource type="Texture2D" uid="uid://b7jfx0ug6g7ky" path="res://charAnimation/leo/leo12.png" id="41_v5j8l"]
+[ext_resource type="Texture2D" uid="uid://d28o7mh6gtwe3" path="res://charAnimation/ben/ben12.png" id="41_w18jh"]
+[ext_resource type="Texture2D" uid="uid://37c83ydum7f2" path="res://charAnimation/leo/leo2.png" id="42_3rl2c"]
+[ext_resource type="Texture2D" uid="uid://d0wa3dl80w06s" path="res://charAnimation/ben/ben2.png" id="42_puk34"]
+[ext_resource type="Texture2D" uid="uid://2d8l3pvugmtr" path="res://charAnimation/leo/leo6.png" id="43_ao2v0"]
+[ext_resource type="Texture2D" uid="uid://dnfql042uain0" path="res://charAnimation/ben/ben6.png" id="43_wt1fx"]
+[ext_resource type="Texture2D" uid="uid://csvgden2ffpjm" path="res://charAnimation/ben/ben1.png" id="44_sm3uw"]
+[ext_resource type="Texture2D" uid="uid://dag3tg6lulv5b" path="res://charAnimation/leo/leo1.png" id="44_t0g72"]
+[ext_resource type="Texture2D" uid="uid://f2wq8smt548y" path="res://charAnimation/ben/ben3.png" id="45_lbo0y"]
+[ext_resource type="Texture2D" uid="uid://lb2fcnab4l1g" path="res://charAnimation/leo/leo3.png" id="45_rotfl"]
+[ext_resource type="Texture2D" uid="uid://bhhvnflh66wym" path="res://charAnimation/ben/ben4.png" id="46_0qntj"]
+[ext_resource type="Texture2D" uid="uid://co1tmbxa43a2w" path="res://charAnimation/leo/leo4.png" id="46_lploo"]
+[ext_resource type="Texture2D" uid="uid://beb36lpe31pld" path="res://charAnimation/ben/ben5.png" id="47_dppt2"]
+[ext_resource type="Texture2D" uid="uid://b57ejip7mwbud" path="res://charAnimation/leo/leo5.png" id="47_yjwcu"]
+[ext_resource type="Texture2D" uid="uid://dqk0xhbrg4g" path="res://charAnimation/ben/ben7.png" id="48_cnx6f"]
+[ext_resource type="Texture2D" uid="uid://6djrw3b7ofln" path="res://charAnimation/leo/leo7.png" id="48_yoqmt"]
+[ext_resource type="Texture2D" uid="uid://dekp7x4daxcxe" path="res://charAnimation/leo/leo8.png" id="49_1u5om"]
+[ext_resource type="Texture2D" uid="uid://dgrgug1glimoe" path="res://charAnimation/ben/ben8.png" id="49_wjryn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cbpvf"]
 texture = ExtResource("1_1yxql")
@@ -88,6 +112,162 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_o5my7"]
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_eok0b")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qh2db"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_xkxa0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_l43xq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_kgnww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_v5j8l")
+}],
+"loop": true,
+"name": &"down",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_l43xq")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_3rl2c")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_ao2v0")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_t0g72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_3rl2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_rotfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_lploo")
+}],
+"loop": true,
+"name": &"right",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("47_yjwcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_ao2v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_yoqmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_1u5om")
+}],
+"loop": true,
+"name": &"up",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_13lup"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_gim4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_rc1gt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_7xvn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_w18jh")
+}],
+"loop": true,
+"name": &"down",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_rc1gt")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_puk34")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_wt1fx")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_sm3uw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_puk34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_lbo0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_0qntj")
+}],
+"loop": true,
+"name": &"right",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("47_dppt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_wt1fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_cnx6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_wjryn")
+}],
+"loop": true,
+"name": &"up",
+"speed": 6.0
+}]
 
 [node name="main" type="Node" node_paths=PackedStringArray("leoNode", "benNode", "tagsNode", "canvasLayerNode", "canvasModulate", "eventAssetsNode")]
 script = ExtResource("1_wx1i1")
@@ -650,20 +830,20 @@ position = Vector2(160, 128)
 script = ExtResource("2_g2cil")
 charName = "leo"
 
-[node name="Sprite2D" type="Sprite2D" parent="leo"]
-modulate = Color(0.847059, 0.372549, 0.541176, 1)
-position = Vector2(16, 16)
-texture = ExtResource("1_sodhu")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="leo"]
+position = Vector2(16, 8)
+sprite_frames = SubResource("SpriteFrames_qh2db")
+animation = &"up"
 
 [node name="ben" type="Node2D" parent="."]
 position = Vector2(192, 128)
 script = ExtResource("2_g2cil")
 charName = "ben"
 
-[node name="Sprite2D" type="Sprite2D" parent="ben"]
-modulate = Color(0.878431, 0.380392, 0.290196, 1)
-position = Vector2(16, 16)
-texture = ExtResource("1_sodhu")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ben"]
+position = Vector2(16, 8)
+sprite_frames = SubResource("SpriteFrames_13lup")
+animation = &"up"
 
 [connection signal="timeout" from="CanvasLayer/achievementBox/upTimer" to="CanvasLayer" method="_on_up_timer_timeout"]
 [connection signal="timeout" from="pauseTimer" to="." method="_on_pause_timer_timeout"]

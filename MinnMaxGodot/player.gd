@@ -48,14 +48,15 @@ func move(targetCell):
 	# Announce movement
 	var state = gc.getState()
 	if (not state["seperate"]) and state["active_char"] == charName:
-		otherCharNode().listenForMovement(curCell)
+		otherCharNode().listenForMovement(curCell, facing)
 	
 	var tween = create_tween()
 	var worldTarget = gc.cellToWorld(targetCell)
 	tween.tween_property(self, "position", worldTarget, 0.216) 
 	tween.tween_callback(movingFalse)
 	
-func listenForMovement(targetCell):
+func listenForMovement(targetCell, leaderFacing):
+	facing = leaderFacing
 	move(targetCell)
 
 func currentCell():
@@ -100,10 +101,41 @@ func maybeMove():
 		if moveRequest != null and gc.inBounds(moveRequest) and (not curCell.is_equal_approx(moveRequest)):
 			move(moveRequest)
 
+func setMovementAnimation():
+	var isMoving = gc.getState()[charName]["moving"]
+	var aSprite = $AnimatedSprite2D
+	aSprite.set_flip_h(false)
+	if facing == 0:
+		if isMoving:
+			aSprite.play("up")
+		else:
+			aSprite.play("idle_up")
+
+	elif facing == 1:
+		if isMoving:
+			aSprite.play("right")
+		else:
+			aSprite.play("idle_right")
+
+	elif facing == 2:
+		if isMoving:
+			aSprite.play("down")
+		else:
+			aSprite.play("idle_down")
+
+	elif facing == 3:
+		aSprite.set_flip_h(true)
+		if isMoving:
+			aSprite.play("right")
+		else:
+			aSprite.play("idle_right")
+
 func _process(_delta):
 
 	var state = gc.getState()
 	var charState = state[charName]
+	
+	setMovementAnimation()
 	
 	if state["ready"]:
 		if state["active_char"] == charName: # and not state[otherCharName()]["moving"]
