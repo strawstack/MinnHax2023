@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://yigtnsbkj52c"]
+[gd_scene load_steps=78 format=3 uid="uid://yigtnsbkj52c"]
 
 [ext_resource type="Texture2D" uid="uid://hxoeyl6kd8ly" path="res://sketchTiles/dirt.png" id="1_1yxql"]
 [ext_resource type="Texture2D" uid="uid://cc6d65x03wtn7" path="res://debugAssets/camera_size.png" id="1_ltrgk"]
@@ -14,12 +14,16 @@
 [ext_resource type="AudioStream" uid="uid://e3wb2i4rfeeb" path="res://eventAudio/alone_thing.mp3" id="2_xyofk"]
 [ext_resource type="AudioStream" uid="uid://cdyqkcu8ai7gl" path="res://eventAudio/go_sonic.mp3" id="3_mpsmb"]
 [ext_resource type="Texture2D" uid="uid://b2ngcyh38rrkx" path="res://sketchTiles/path.png" id="3_vgt1p"]
+[ext_resource type="Texture2D" uid="uid://b6x2c873p1gnf" path="res://charHeads/ben_head.png" id="4_3jvmn"]
 [ext_resource type="Texture2D" uid="uid://bt1org0pse514" path="res://sketchTiles/road.png" id="4_coeis"]
 [ext_resource type="AudioStream" uid="uid://c4qlsxg44dhq7" path="res://eventAudio/bye.mp3" id="4_lcfo5"]
 [ext_resource type="AudioStream" uid="uid://c5vt43u2px2h" path="res://eventAudio/card.mp3" id="5_4wwhh"]
+[ext_resource type="Texture2D" uid="uid://cepc42tbw4scr" path="res://charHeads/leo_head.png" id="5_c3y8d"]
 [ext_resource type="Texture2D" uid="uid://d0eexcrkvglwl" path="res://sketchTiles/water.png" id="5_mt5f3"]
 [ext_resource type="AudioStream" uid="uid://b8p7kd0cvkdrh" path="res://eventAudio/camera_spin.mp3" id="6_g22kl"]
+[ext_resource type="Texture2D" uid="uid://dyiuynsfmray" path="res://charHeads/janet_head.png" id="7_2l3ex"]
 [ext_resource type="AudioStream" uid="uid://dip7p4nqf55xc" path="res://eventAudio/tennis_shoes.mp3" id="7_pmunk"]
+[ext_resource type="Texture2D" uid="uid://bisphku0tqhih" path="res://images/MinnMaxLogo.png" id="8_gslam"]
 [ext_resource type="AudioStream" uid="uid://brslk3uhuyjld" path="res://eventAudio/drink_in_winter.mp3" id="8_ijmye"]
 [ext_resource type="AudioStream" uid="uid://bwi8dn1amntrk" path="res://eventAudio/we_tried.mp3" id="9_g5s1d"]
 [ext_resource type="AudioStream" uid="uid://c3fftwd6byw7a" path="res://eventAudio/spray_paint.mp3" id="10_bayou"]
@@ -291,11 +295,13 @@ offset_right = 640.0
 offset_bottom = 96.0
 color = Color(0.215686, 0.215686, 0.215686, 1)
 
-[node name="PlaceholderImage" type="ColorRect" parent="CanvasLayer/textBoxLeft"]
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 80.0
-offset_bottom = 85.0
+[node name="ben" type="Sprite2D" parent="CanvasLayer/textBoxLeft"]
+position = Vector2(48, 48)
+texture = ExtResource("4_3jvmn")
+
+[node name="leo" type="Sprite2D" parent="CanvasLayer/textBoxLeft"]
+position = Vector2(48, 48)
+texture = ExtResource("5_c3y8d")
 
 [node name="Label" type="Label" parent="CanvasLayer/textBoxLeft"]
 offset_left = 96.0
@@ -316,11 +322,9 @@ offset_right = 640.0
 offset_bottom = 96.0
 color = Color(0.215686, 0.215686, 0.215686, 1)
 
-[node name="PlaceholderImage2" type="ColorRect" parent="CanvasLayer/textBoxRight"]
-offset_left = 560.0
-offset_top = 16.0
-offset_right = 624.0
-offset_bottom = 85.0
+[node name="janet" type="Sprite2D" parent="CanvasLayer/textBoxRight"]
+position = Vector2(592, 48)
+texture = ExtResource("7_2l3ex")
 
 [node name="Label" type="Label" parent="CanvasLayer/textBoxRight"]
 offset_left = 16.0
@@ -356,22 +360,19 @@ theme_override_font_sizes/font_size = 16
 text = "Achievement Unlocked"
 
 [node name="Label2" type="Label" parent="CanvasLayer/achievementBox"]
-offset_left = 448.0
+offset_left = 416.0
 offset_top = 272.0
 offset_right = 608.0
-offset_bottom = 368.0
+offset_bottom = 352.0
 theme = ExtResource("2_1g25m")
 theme_override_font_sizes/font_size = 14
 text = "Description of achievement could be a bit long so might...
 (Click box to play audio)"
-vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="PlaceholderPlayButton" type="ColorRect" parent="CanvasLayer/achievementBox"]
-offset_left = 336.0
-offset_top = 272.0
-offset_right = 432.0
-offset_bottom = 368.0
+[node name="logo" type="Sprite2D" parent="CanvasLayer/achievementBox"]
+position = Vector2(368, 304)
+texture = ExtResource("8_gslam")
 
 [node name="pauseTimer" type="Timer" parent="."]
 one_shot = true

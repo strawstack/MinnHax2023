@@ -15,6 +15,9 @@ var boxLeftLabel
 var boxRightLabel
 var achievementBoxTitle
 
+var leoHead
+var benHead
+
 var upTimer
 
 # Set by nextLine
@@ -46,6 +49,9 @@ func _ready():
 	achievementBoxTitle = get_node("achievementBox/Label2")
 
 	upTimer = get_node("achievementBox/upTimer")
+	
+	leoHead = get_node("textBoxLeft/leo")
+	benHead = get_node("textBoxLeft/ben")
 	
 	boxLeft.set_visible(false)
 	boxRight.set_visible(false)
@@ -92,13 +98,21 @@ func showText(charName, value, _stepComplete):
 	index = 0
 	lines = makeLines(value)
 	
+	if charName == "leo":
+		benHead.set_visible(false)
+		leoHead.set_visible(true)
+
+	elif charName == "ben":
+		benHead.set_visible(true)
+		leoHead.set_visible(false)
+	
 	if charName == "leo" or charName == "ben":
 		targetLabel = boxLeftLabel
 		showLeftBox(true)
 	elif charName == "janet":
 		targetLabel = boxRightLabel
 		showLeftBox(false)
-	
+
 	nextLine()
 
 func noSpaces(line):
