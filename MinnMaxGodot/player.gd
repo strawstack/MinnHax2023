@@ -5,7 +5,7 @@ var tagsNode
 @export var charName: String = ""
 
 var slip = false
-var facing = 0 # 0: up, 1: right, 2: down, 3: left
+var facing = 2 # 0: up, 1: right, 2: down, 3: left
 var facingLookup
 
 var facingRequest = null
