@@ -47,6 +47,7 @@ func _ready():
 	
 	# Force correct visibility
 	$CanvasLayer.set_visible(true)
+	#$tags.set_visible(true)
 
 func reportReady(key):
 	readyLookup[key] = true
