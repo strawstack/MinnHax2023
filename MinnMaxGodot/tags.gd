@@ -129,6 +129,10 @@ func nextStep():
 				gc.fireOff()
 				stepComplete()
 			
+			elif step["name"] == "hillBlock":
+				gc.hillBlock(step["value"])
+				stepComplete()
+			
 			else:
 				print("Warning: ", step["type"], ": ", step["name"])
 				stepComplete()

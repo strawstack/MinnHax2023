@@ -2,12 +2,17 @@
 	"data": [
 		{
 			"type": "function",
+			"name": "hillBlock",
+			"value": 2
+		},		
+		{
+			"type": "function",
 			"name": "camera",
 			"value": {
 				"to": "ben",
 				"speed": 1
 			}
-		},	
+		},
 		{
 			"type": "function",
 			"name": "switch",

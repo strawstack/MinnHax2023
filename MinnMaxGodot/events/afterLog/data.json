@@ -10,7 +10,12 @@
 			"name": "move",
 			"value": {
 				"name": "leo",
-				"points": ["after_log"]
+				"points": [
+					"after_log_one",
+					"after_log_two",
+					"after_log_three",
+					"after_log_four"
+				]
 			}
 		},
 		{

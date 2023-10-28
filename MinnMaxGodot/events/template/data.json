@@ -35,6 +35,11 @@
 		},
 		{
 			"type": "function",
+			"name": "hillBlock",
+			"value": 1
+		},
+		{
+			"type": "function",
 			"name": "switch",
 			"value": "leo"
 		},

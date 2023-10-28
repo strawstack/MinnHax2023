@@ -28,10 +28,9 @@ func movingFalse():
 	var state = gc.getState()
 	var curCell = currentCell()
 	
-	if not gc.debug:
-		if state["active_char"] == charName:
-			tagsNode.triggerEvent(curCell)
-			slip = gc.isIce(curCell)
+	if state["active_char"] == charName:
+		tagsNode.triggerEvent(curCell)
+		slip = gc.isIce(curCell)
 	
 	if slip:
 		slip = false

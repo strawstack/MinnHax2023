@@ -42,6 +42,14 @@
 		},
 		{
 			"type": "function",
+			"name": "camera",
+			"value": {
+				"to": "leo",
+				"speed": 1
+			}
+		},		
+		{
+			"type": "function",
 			"name": "switch",
 			"value": "leo"
 		}		

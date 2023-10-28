@@ -15,10 +15,24 @@
 		},
 		{
 			"type": "function",
+			"name": "hillBlock",
+			"value": 3
+		},		
+		{
+			"type": "function",
 			"name": "move",
 			"value": {
 				"name": "leo",
-				"points": ["leo_one", "leo_two", "the_stairs"]
+				"points": [
+					"leo_one", 
+					"leo_two",
+					"leo_three",
+					"leo_four",
+					"leo_five",
+					"leo_six",
+					"leo_seven",
+					"leo_eight"
+				]
 			}
 		},
 		{

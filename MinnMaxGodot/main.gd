@@ -44,10 +44,18 @@ func _ready():
 	else:
 		canvasModulate.setBlack()
 		canvasModulate.fadeIn(fadeInComplete)
-	
+
 	# Force correct visibility
 	$CanvasLayer.set_visible(true)
-	#$tags.set_visible(true)
+	$tags.set_visible(true)
+	$bounds.set_visible(false)
+	for item in $eventAssets.get_children():
+		item.set_visible(false)
+	
+	# Add temp bounds to bounds
+	setChildrenBoundsAndVisible($eventAssets/hillBottomBlock, true)
+	setChildrenBoundsAndVisible($eventAssets/hillSideBlock, true)
+	setChildrenBoundsAndVisible($eventAssets/logBlock, true)
 
 func reportReady(key):
 	readyLookup[key] = true
@@ -92,6 +100,12 @@ func isIce(cell):
 func inBounds(cell):
 	return not $bounds.inBounds(cell)
 
+func addBound(cell):
+	$bounds.addBounds(cell)
+
+func removeBound(cell):
+	$bounds.addBounds(cell)
+
 func playAudio(audioClip):
 	$audioStreams.get_node(audioClip).play()
 
@@ -133,6 +147,7 @@ func charMoveComplete(charName, pos, callback):
 
 func move(charName, points, callback):
 	var charNode = leoNode if charName == "leo" else benNode
+	var aSprite = charNode.get_node("AnimatedSprite2D")
 	var tween = create_tween()
 	var prevPos = charNode.get_global_position()
 	for point in points:
@@ -170,6 +185,32 @@ func fireOn():
 func fireOff():
 	$eventAssets.get_node("coals").set_visible(true)
 	$eventAssets.get_node("fireOn").set_visible(false)
+
+func setChildrenBoundsAndVisible(node, value):
+	node.set_visible(value)
+	for child in node.get_children():
+		var pos = child.get_global_position()
+		var cell = worldToCell(pos)
+		if value:
+			$bounds.addBound(cell)
+		else:
+			$bounds.removeBound(cell)
+
+func hillBlock(value):
+	if value == 1:
+		setChildrenBoundsAndVisible($eventAssets/hillBottomBlock, false)
+		setChildrenBoundsAndVisible($eventAssets/hillSideBlock, true)
+		setChildrenBoundsAndVisible($eventAssets/logBlock, true)
+
+	elif value == 2:
+		setChildrenBoundsAndVisible($eventAssets/hillBottomBlock, true)
+		setChildrenBoundsAndVisible($eventAssets/hillSideBlock, false)
+		setChildrenBoundsAndVisible($eventAssets/logBlock, true)
+
+	elif value == 3:
+		setChildrenBoundsAndVisible($eventAssets/hillBottomBlock, true)
+		setChildrenBoundsAndVisible($eventAssets/hillSideBlock, true)
+		setChildrenBoundsAndVisible($eventAssets/logBlock, false)
 
 func _on_pause_timer_timeout():
 	var temp = pauseTimerCallback
