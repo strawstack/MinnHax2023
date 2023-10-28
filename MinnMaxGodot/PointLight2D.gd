@@ -5,8 +5,11 @@ extends PointLight2D
 func _ready():
 	pass
 	
-func startTween():
+func startTweenMenu():
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "energy", 0.5, 2)
 	tween.tween_property(self, "energy", 0, 1).set_delay(1)
 
+func startTweenGame():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "energy", 0.5, 1)

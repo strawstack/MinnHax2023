@@ -233,3 +233,6 @@ func _on_pause_timer_timeout():
 	var temp = pauseTimerCallback
 	pauseTimerCallback = null
 	temp.call()
+
+func _on_wind_forest_crows_finished():
+	$audioStreams/wind_forest_crows.play()

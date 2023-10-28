@@ -1473,7 +1473,7 @@ volume_db = -30.0
 
 [node name="card" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("5_4wwhh")
-volume_db = -30.0
+volume_db = -10.0
 
 [node name="camera_spin" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("6_g22kl")
@@ -1539,9 +1539,9 @@ volume_db = -30.0
 stream = ExtResource("21_kgasq")
 volume_db = -30.0
 
-[node name="wind_forest_crows" type="AudioStreamPlayer2D" parent="audioStreams"]
+[node name="wind_forest_crows" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("30_18i1h")
-volume_db = -37.0
+volume_db = -50.0
 autoplay = true
 
 [node name="grass" type="TileMap" parent="."]
@@ -2391,3 +2391,4 @@ layer_0/tile_data = PackedInt32Array(131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 1
 
 [connection signal="timeout" from="CanvasLayer/achievementBox/upTimer" to="CanvasLayer" method="_on_up_timer_timeout"]
 [connection signal="timeout" from="pauseTimer" to="." method="_on_pause_timer_timeout"]
+[connection signal="finished" from="audioStreams/wind_forest_crows" to="." method="_on_wind_forest_crows_finished"]

@@ -9,7 +9,7 @@ func turnOn():
 	$flames.set_visible(true)
 	$flames.play("fire")
 	$PointLight2D.set_visible(true)
-	$PointLight2D.startTween()
+	$PointLight2D.startTweenGame()
 
 func turnOff():
 	$flames.set_visible(false)
