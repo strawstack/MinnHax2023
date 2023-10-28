@@ -36,22 +36,22 @@
 			"value": "Yeah, welcome to Hiking Simulator Simulator Simulator. It’s about time that that genre levels up. You know?"
 		},
 		{
-			"type": "text",
-			"name": "leo",
-			"value": "Let's get vertical!"
-		},
-		{
 			"type": "function",
 			"name": "camera",
 			"value": {
 				"to": "leo",
 				"speed": 1
 			}
-		},		
+		},
 		{
 			"type": "function",
 			"name": "switch",
 			"value": "leo"
-		}		
+		},		
+		{
+			"type": "text",
+			"name": "leo",
+			"value": "Let's get vertical!"
+		}
 	]
 }

@@ -7,7 +7,7 @@ extends Node
 @export var canvasModulate: CanvasModulate
 @export var eventAssetsNode: Node2D
 
-var debug = true
+var debug = false
 
 var readyLookup = {
 	"leo": false,
@@ -51,6 +51,8 @@ func _ready():
 	$bounds.set_visible(false)
 	for item in $eventAssets.get_children():
 		item.set_visible(false)
+	$eventAssets/fire.set_visible(true)
+	$eventAssets/house_over_water.set_visible(true)
 	
 	# Add temp bounds to bounds
 	setChildrenBoundsAndVisible($eventAssets/hillBottomBlock, true)
@@ -141,17 +143,33 @@ func calcDiffTime(prev, target):
 	return (target - prev).length() / 32 * 0.2
 
 func charMoveComplete(charName, pos, callback):
+	var charNode = leoNode if charName == "leo" else benNode
+	charNode.facing = 2
 	var cell = worldToCell(pos)
 	setState(func(s): s[charName]["cell"] = cell)
+	setState(func(s): s[charName]["moving"] = false)
 	callback.call()
 
+func setFacing(charNode, prev, next):
+	if is_equal_approx(next.x, prev.x):
+		if next.y > prev.y:
+			charNode.facing = 2
+		else:
+			charNode.facing = 0
+	else:
+		if next.x > prev.x:
+			charNode.facing = 1
+		else:
+			charNode.facing = 3
+
 func move(charName, points, callback):
+	setState(func(s): s[charName]["moving"] = true)
 	var charNode = leoNode if charName == "leo" else benNode
-	var aSprite = charNode.get_node("AnimatedSprite2D")
 	var tween = create_tween()
 	var prevPos = charNode.get_global_position()
 	for point in points:
 		var targetPos = worldToCell($eventAssets.get_node(point).get_global_position()) * 32.0
+		tween.tween_method(func(x): setFacing(charNode, prevPos, targetPos), Vector2.ZERO, Vector2.ZERO, 0)
 		tween.tween_property(charNode, "position", targetPos, calcDiffTime(prevPos, targetPos))
 		prevPos = targetPos
 	tween.tween_callback(func(): charMoveComplete(charName, prevPos, callback))
@@ -180,11 +198,10 @@ func backToStart(value):
 	$pauseTimer.start()
 
 func fireOn():
-	$eventAssets.get_node("fireOn").set_visible(true)
+	$eventAssets/fire.turnOn()
 
 func fireOff():
-	$eventAssets.get_node("coals").set_visible(true)
-	$eventAssets.get_node("fireOn").set_visible(false)
+	$eventAssets/fire.turnOff()
 
 func setChildrenBoundsAndVisible(node, value):
 	node.set_visible(value)

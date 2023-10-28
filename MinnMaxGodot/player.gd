@@ -33,7 +33,6 @@ func movingFalse():
 		slip = gc.isIce(curCell)
 	
 	if slip:
-		slip = false
 		var fd = facingLookup[facing]
 		move(curCell + fd)
 	else:
@@ -106,26 +105,26 @@ func setMovementAnimation():
 	var aSprite = $AnimatedSprite2D
 	aSprite.set_flip_h(false)
 	if facing == 0:
-		if isMoving:
+		if isMoving and not slip:
 			aSprite.play("up")
 		else:
 			aSprite.play("idle_up")
 
 	elif facing == 1:
-		if isMoving:
+		if isMoving and not slip:
 			aSprite.play("right")
 		else:
 			aSprite.play("idle_right")
 
 	elif facing == 2:
-		if isMoving:
+		if isMoving and not slip:
 			aSprite.play("down")
 		else:
 			aSprite.play("idle_down")
 
 	elif facing == 3:
 		aSprite.set_flip_h(true)
-		if isMoving:
+		if isMoving and not slip:
 			aSprite.play("right")
 		else:
 			aSprite.play("idle_right")
@@ -141,3 +140,6 @@ func _process(_delta):
 		if state["active_char"] == charName: # and not state[otherCharName()]["moving"]
 			checkKeys(charState)
 			maybeMove()
+		else:
+			facingRequest = null
+			moveRequest = null

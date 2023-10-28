@@ -84,7 +84,10 @@
 			"name": "move",
 			"value": {
 				"name": "ben",
-				"points": ["after_fire_ben"]
+				"points": [
+					"after_fire_ben_one",
+					"after_fire_ben_two"
+				]
 			}
 		},
 		{
@@ -92,7 +95,10 @@
 			"name": "move",
 			"value": {
 				"name": "leo",
-				"points": ["after_fire_leo"]
+				"points": [
+					"after_fire_leo_one",
+					"after_fire_leo_two"
+				]
 			}
 		},
 		{
