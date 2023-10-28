@@ -13,6 +13,8 @@ var achievementBox
 
 var boxLeftLabel
 var boxRightLabel
+var boxLeftAdvance
+var boxRightAdvance
 var achievementBoxTitle
 
 var leoHead
@@ -28,10 +30,19 @@ var currentLine
 
 # Set by showText
 var targetLabel
+var targetAdvance
 var stepComplete
+var targetLine
+var targetLineCount
 
-# Track key press
+# Track key press and current state
 var keyPressActive = false
+var textAnimating = false
+
+# Text timers
+var charSpeed = 0.015
+var symbolSpeed = 0.35
+var charTimer = 0
 
 var symbolLookup = {
 	",": true,
@@ -47,6 +58,9 @@ func _ready():
 	boxLeftLabel = get_node("textBoxLeft/Label")
 	boxRightLabel = get_node("textBoxRight/Label")
 	achievementBoxTitle = get_node("achievementBox/Label2")
+	
+	boxLeftAdvance = get_node("textBoxLeft/advance")
+	boxRightAdvance = get_node("textBoxRight/advance")
 
 	upTimer = get_node("achievementBox/upTimer")
 	
@@ -108,9 +122,11 @@ func showText(charName, value, _stepComplete):
 	
 	if charName == "leo" or charName == "ben":
 		targetLabel = boxLeftLabel
+		targetAdvance = boxLeftAdvance
 		showLeftBox(true)
 	elif charName == "janet":
 		targetLabel = boxRightLabel
+		targetAdvance = boxRightAdvance
 		showLeftBox(false)
 
 	nextLine()
@@ -130,10 +146,14 @@ func nextLine():
 		stepComplete.call()
 	else: 
 		var line = lines[index]
+		targetLine = line
+		targetLineCount = line.length()
 		index += 1
-		targetLabel.set_visible_characters(-1)
+		targetLabel.set_visible_characters(0)
 		targetLabel.set_text(line)
+		targetAdvance.set_visible(false)
 		keyPressActive = true
+		textAnimating = true
 
 func achievementReady(audioClip):
 	# Play audio here
@@ -153,9 +173,37 @@ func showAchievement(achName, audioClip):
 	achievementBoxTitle.set_text(achName)
 	achTweenUp(audioClip)
 
-func _process(_delta):
-	if keyPressActive:
-		if Input.is_action_just_pressed("action"):
+func isSymbol(char):
+	var lookup = {
+		",": true,
+		"!": true,
+		";": true,
+		".": true
+	}
+	return char in lookup
+
+func _process(delta):
+	if textAnimating:
+		charTimer -= delta
+		if charTimer <= 0:
+			var ncv = targetLabel.get_visible_characters() + 1
+			if ncv == targetLineCount:
+				targetLabel.set_visible_characters(ncv)
+				textAnimating = false
+				targetAdvance.set_visible(true)
+			else:
+				if ncv >= 1 and isSymbol(targetLine[ncv - 1]):
+					charTimer = symbolSpeed
+				else:
+					charTimer = charSpeed
+				targetLabel.set_visible_characters(ncv)
+
+	if keyPressActive and Input.is_action_just_pressed("action"):
+		if textAnimating:
+			textAnimating = false
+			targetAdvance.set_visible(true)
+			targetLabel.set_visible_characters(targetLineCount)
+		else:
 			nextLine()
 
 func _on_up_timer_timeout():

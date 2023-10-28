@@ -1346,7 +1346,6 @@ eventAssetsNode = NodePath("eventAssets")
 script = ExtResource("2_5cmae")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("2_kby22")
 
 [node name="textBoxLeft" type="Node2D" parent="CanvasLayer"]
@@ -1375,6 +1374,13 @@ autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
 
+[node name="advance" type="Sprite2D" parent="CanvasLayer/textBoxLeft"]
+visible = false
+modulate = Color(0.239216, 0.560784, 0.784314, 0.662745)
+position = Vector2(616, 72)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_sodhu")
+
 [node name="textBoxRight" type="Node2D" parent="CanvasLayer"]
 visible = false
 
@@ -1395,6 +1401,13 @@ offset_bottom = 85.0
 theme = ExtResource("2_1g25m")
 text = "Sample dialogue this could be long. I should keep writting to fill the whole space in order to make sure everything wraps correctly and to test how much text can fit in this space before we need to add..."
 autowrap_mode = 2
+
+[node name="advance" type="Sprite2D" parent="CanvasLayer/textBoxRight"]
+visible = false
+modulate = Color(0.239216, 0.560784, 0.784314, 0.662745)
+position = Vector2(536, 72)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_sodhu")
 
 [node name="achievementBox" type="Node2D" parent="CanvasLayer"]
 position = Vector2(0, 160)
