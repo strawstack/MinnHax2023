@@ -7,5 +7,6 @@ func _ready():
 	
 func startTween():
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "energy", 0.5, 1)
+	tween.tween_property(self, "energy", 0.5, 2)
+	tween.tween_property(self, "energy", 0, 1).set_delay(1)
 
