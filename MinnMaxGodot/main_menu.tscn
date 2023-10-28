@@ -39,6 +39,31 @@ Simulator Simulator Simulator"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label3" type="Label" parent="."]
+offset_left = 448.0
+offset_top = 272.0
+offset_right = 624.0
+offset_bottom = 368.0
+theme = ExtResource("2_g5r2d")
+theme_override_font_sizes/font_size = 18
+text = "Created by Richard
+in San Francisco
+for MinnHax 2023"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 272.0
+offset_right = 192.0
+offset_bottom = 368.0
+theme = ExtResource("2_g5r2d")
+theme_override_font_sizes/font_size = 18
+text = "Controls
+WASD or Arrow Keys to move.
+Space or Enter to advance dialogue. "
+vertical_alignment = 2
+
 [node name="Button" type="Button" parent="."]
 offset_left = 256.0
 offset_top = 224.0
