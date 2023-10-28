@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=3 uid="uid://yigtnsbkj52c"]
+[gd_scene load_steps=116 format=3 uid="uid://yigtnsbkj52c"]
 
 [ext_resource type="Texture2D" uid="uid://hxoeyl6kd8ly" path="res://sketchTiles/dirt.png" id="1_1yxql"]
 [ext_resource type="Texture2D" uid="uid://cc6d65x03wtn7" path="res://debugAssets/camera_size.png" id="1_ltrgk"]
@@ -38,6 +38,7 @@
 [ext_resource type="AudioStream" uid="uid://dj2k4d0u2xpb8" path="res://eventAudio/small_cotton.mp3" id="19_nt63g"]
 [ext_resource type="AudioStream" uid="uid://dy36gmdqghsn1" path="res://eventAudio/sport_mode.mp3" id="20_r8vij"]
 [ext_resource type="AudioStream" uid="uid://dyvrx7mmv6atb" path="res://eventAudio/crock_and_rock.mp3" id="21_kgasq"]
+[ext_resource type="AudioStream" uid="uid://cr5uuaddm1rrx" path="res://eventAudio/wind_forest_crows.mp3" id="30_18i1h"]
 [ext_resource type="Texture2D" uid="uid://cukw6htrxj812" path="res://tiles/MinnMax_2023.png" id="32_12jod"]
 [ext_resource type="Texture2D" uid="uid://nr4nuex501ra" path="res://tiles/grass.png" id="32_qx52j"]
 [ext_resource type="Script" path="res://playerCamera.gd" id="32_s41ph"]
@@ -1447,64 +1448,88 @@ script = ExtResource("32_s41ph")
 
 [node name="walk_minnmax_style" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("2_h7bwe")
+volume_db = -30.0
 
 [node name="go_sonic" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("3_mpsmb")
+volume_db = -30.0
 
 [node name="bye" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("4_lcfo5")
+volume_db = -30.0
 
 [node name="card" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("5_4wwhh")
+volume_db = -30.0
 
 [node name="camera_spin" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("6_g22kl")
+volume_db = -30.0
 
 [node name="tennis_shoes" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("7_pmunk")
+volume_db = -30.0
 
 [node name="drink_in_winter" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("8_ijmye")
+volume_db = -30.0
 
 [node name="we_tried" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("9_g5s1d")
+volume_db = -30.0
 
 [node name="spray_paint" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("10_bayou")
+volume_db = -30.0
 
 [node name="hella_rich" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("11_q56bd")
+volume_db = -30.0
 
 [node name="smell_that" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("12_1akn4")
+volume_db = -30.0
 
 [node name="alone_thing" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("2_xyofk")
+volume_db = -30.0
 
 [node name="what_a_hero" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("14_5x8db")
+volume_db = -30.0
 
 [node name="bombs_havent_touched" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("15_h5rqa")
+volume_db = -30.0
 
 [node name="infalable" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("16_gr201")
+volume_db = -30.0
 
 [node name="blumpo" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("18_qc8x5")
-volume_db = 10.0
+volume_db = -15.0
 
 [node name="cave_for_people" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("18_vk0en")
+volume_db = -30.0
 
 [node name="small_cotton" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("19_nt63g")
+volume_db = -30.0
 
 [node name="sport_mode" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("20_r8vij")
+volume_db = -30.0
 
 [node name="crock_and_rock" type="AudioStreamPlayer" parent="audioStreams"]
 stream = ExtResource("21_kgasq")
+volume_db = -30.0
+
+[node name="wind_forest_crows" type="AudioStreamPlayer2D" parent="audioStreams"]
+stream = ExtResource("30_18i1h")
+volume_db = -30.0
+autoplay = true
 
 [node name="grass" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_mcpih")
