@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 var CUT_OFF = 160
-var achUp = 0
+var achUp = 32
 var achDown = 160
 
 var gc
