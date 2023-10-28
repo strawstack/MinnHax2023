@@ -1541,7 +1541,7 @@ volume_db = -30.0
 
 [node name="wind_forest_crows" type="AudioStreamPlayer2D" parent="audioStreams"]
 stream = ExtResource("30_18i1h")
-volume_db = -30.0
+volume_db = -37.0
 autoplay = true
 
 [node name="grass" type="TileMap" parent="."]
